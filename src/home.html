@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Diagnosis</title>
+    <style>
+        .button {
+            background-color: #00aaff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1>Plant Diagnosis</h1>
+    <select class="dropdown">
+        <option>Select plant type</option>
+        <!-- Add more options here -->
+    </select>
+    <div>
+        <p>Drag and drop or <a href="#">select image</a></p>
+    </div>
+    <button class="button" onclick="diagnose(null)">Diagnose</button>
+</body>
+</html>
