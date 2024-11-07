@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head class="head">
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant Diagnosis</title>
@@ -17,23 +16,43 @@
             padding: 10px;
             margin-bottom: 10px;
         }
-        head{
-        background: url("field.jpeg") no-repeat center center fixed;
-        background-size: cover;
-        margin: 0;
-        padding: 0;
+        body{
+        background: url("fieldd.jpeg");
+        background-size: 100%;
         }
+        .nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 10px;
+            outline: 3px solid black;
+        }
+        
     </style>
     <script src="app.js"></script>
 </head>
 <body>
-    <h1>Plant Diagnosis</h1>
+    <h1 class="title">Plant Diagnosis</h1>
     <select class="dropdown">
         <option>Select plant type</option>
-        <!-- Add more options here -->
+        <option>Apple</option>
+        <option>Cherry</option>
+        <option>Corn</option>
+        <option>Grape</option>
+        <option>Peach</option>
+        <option>Bell Pepper</option>
+        <option>Potato</option>
+        <option>Strawberry</option>
+        <option>Tomato</option>
     </select>
     <div>
         <p>Drag and drop or <a href="#">select image</a></p>
+    </div>
+    <div class="nav">
+        <a class="info" href="info.html" style="color: white; font-size: 1.5em">Info</a>
+        <a class="about" href="about.html" style="color: white; font-size: 1.5em;">About</a>
+
+
     </div>
     <button class="button" onclick="diagnose(null)">Diagnose</button>
 </body>
