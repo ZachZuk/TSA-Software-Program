@@ -1,9 +1,12 @@
+import random
 import numpy as np
 import os
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
-img_height, img_width = 100, 100
+img_height, img_width = 200, 200
+
+plant_types = ['Apple', 'Cherry_(including_sour)', 'Corn_(maize)', 'Grape', 'Peach', 'Pepper,_bell', 'Potato', 'Strawberry']
 
 # function to make the image a thing for the cnn and not a jpg
 def load_and_preprocess_image(img_path):
@@ -41,7 +44,7 @@ def predict_image(model, img_path, class_indices):
 # function to diagnose a plant start to finish
 def diagnose(plant_type, img_path):
     # loading in the right model for the plant
-    model = load_model(f'{plant_type}_model.keras')
+    model = load_model(f'models/{plant_type}_model.keras')
 
     # making the path for where the categories are
     test_directory = os.path.join('src', 'Plant-Images', plant_type, 'test')
@@ -50,9 +53,22 @@ def diagnose(plant_type, img_path):
     class_indices = {folder: idx for idx, folder in enumerate(os.listdir(test_directory)) if os.path.isdir(os.path.join(test_directory, folder))}
 
     # predict
-    predicted_label = predict_image(model, img_path, class_indices)
+    return predict_image(model, img_path, class_indices)
 
-    print(f'Predicted Label: {predicted_label}')
+plants = []
 
-#   testing
-diagnose("Grape", 'src/Plant-Images/Grape/train/Grape___Esca_(Black_Measles)/Grape___Esca_(Black_Measles)_0ca3b914-f951-485e-897d-ed75dc3c423f___FAM_B.Msls 3844.JPG')
+correct = 0
+
+for i in range(0, 100):
+    plant_type = random.choice(plant_types)
+    plant_diagnosis = random.choice(os.listdir(os.path.join("src", "Plant-Images", plant_type, "train")))
+    img_url = f'src/Plant-Images/{plant_type}/train/{plant_diagnosis}/{random.choice(os.listdir(os.path.join("src", "Plant-Images", plant_type, "train", plant_diagnosis)))}'
+    plants.append([plant_type, img_url, plant_diagnosis])
+
+for plant in plants:
+    diagnosis = diagnose(plant[0], plant[1])
+    print('Actual diagnosis: ' + plant[2] + ' | Predicted: ' + diagnosis)
+    if diagnosis == plant[2]:
+        correct += 1
+
+print('accuracy: ' + str(correct) + ' out of 100')

@@ -4,10 +4,12 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import EarlyStopping
+from tensorflow.keras.layers import Dropout
 
 # parameters
-img_height, img_width = 100, 100  # sizes of images
-batch_size = 32
+img_height, img_width = 200, 200  # sizes of images
+batch_size = 16
 
 # list of plants
 plants = ['Apple', 'Cherry_(including_sour)', 'Corn_(maize)', 'Grape', 'Peach', 'Pepper,_bell', 'Potato', 'Strawberry', 'Tomato']
@@ -48,21 +50,31 @@ def trainPlant(plant_type):
         MaxPooling2D(pool_size=(2, 2)),
         Conv2D(128, (3, 3), activation='relu'),
         MaxPooling2D(pool_size=(2, 2)),
+        Conv2D(256, (3, 3), activation='relu'),  # Added more filters
+        MaxPooling2D(pool_size=(2, 2)),
+        Conv2D(512, (3, 3), activation='relu'),  # Added another layer
+        MaxPooling2D(pool_size=(2, 2)),
         Flatten(),
-        Dense(128, activation='relu'),
+        Dense(256, activation='relu'),  # Increased the number of units in the dense layer
+        Dropout(0.5),  # Regularization to prevent overfitting
         Dense(len(train_generator.class_indices), activation='softmax')  # Number of classes
     ])
 
-    # compiling the model
-    model.compile(optimizer=Adam(), 
-              loss='categorical_crossentropy', 
-              metrics=['accuracy'])
-    
-    # training the model
+    # Early stopping callback
+    early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
+
+    model.compile(
+        optimizer=Adam(learning_rate=0.001),
+        loss='categorical_crossentropy',
+        metrics=['accuracy']
+    )
+
+    # training the model with early stopping
     model.fit(
         train_generator,
-        epochs=10,  # Set the number of epochs
-        validation_data=test_generator  # Add validation data
+        epochs=50,  # You can set a higher number of epochs
+        validation_data=test_generator,
+        callbacks=[early_stopping]  # Add early stopping callback
     )
 
     # printing stuff about the model
@@ -70,7 +82,7 @@ def trainPlant(plant_type):
     print(f'Test Loss: {loss}, Test Accuracy: {accuracy}')
 
     # saving the model
-    model.save(f'{plant_type}_model.keras')
+    model.save(f'  {plant_type}_model.keras')
 
 # making a model for each plant
 for plant in plants:
