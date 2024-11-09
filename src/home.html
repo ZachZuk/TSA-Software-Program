@@ -6,6 +6,7 @@
     <title>Plant Diagnosis</title>
     <style>
         .button {
+            font-family: sans-serif;
             background-color: #00aaff;
             color: white;
             padding: 10px 20px;
@@ -14,11 +15,13 @@
         }
         .dropdown {
             padding: 10px;
+            font-family: sans-serif;
             margin-bottom: 10px;
         }
         body{
-        background: url("fieldd.jpeg");
-        background-size: 100%;
+            font-family: sans-serif;
+            background: url("fieldd.jpeg");
+            background-size: 110%;
         }
         .nav {
             position: absolute;
@@ -26,34 +29,44 @@
             right: 0;
             margin: 10px;
             outline: 3px solid black;
+            border-width: 5px;
         }
-        
+        .title {
+            margin-top: 0em;
+            margin-left: 19em;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2em;
+        }
+        .about-web {
+            text-align: center;
+            width: 65%;
+            font-family: 'Times New Roman';
+            font-size: 25px;
+            margin-left: 10em;
+            margin-top: 2.5em;
+        }
+        .button2 {
+            font-size: 25px;
+            font-family: 'Times New Roman';
+            background-color: grey;
+            color: white;
+            margin-left: 26em;
+        }
     </style>
     <script src="app.js"></script>
 </head>
 <body>
     <h1 class="title">Plant Diagnosis</h1>
-    <select class="dropdown">
-        <option>Select plant type</option>
-        <option>Apple</option>
-        <option>Cherry</option>
-        <option>Corn</option>
-        <option>Grape</option>
-        <option>Peach</option>
-        <option>Bell Pepper</option>
-        <option>Potato</option>
-        <option>Strawberry</option>
-        <option>Tomato</option>
-    </select>
-    <div>
-        <p>Drag and drop or <a href="#">select image</a></p>
-    </div>
     <div class="nav">
         <a class="info" href="info.html" style="color: white; font-size: 1.5em">Info</a>
         <a class="about" href="about.html" style="color: white; font-size: 1.5em;">About</a>
-
-
+        <a class="diagnose" href="diagnose.html" style="color: white; font-size: 1.5em;">Diagnose</a>
     </div>
-    <button class="button" onclick="diagnose(null)">Diagnose</button>
+    <p class="about-web">
+        This is our TSA Project that aims to help agriculture become more sustainable and efficent. Our program will do this by
+        giving farmers the ability to take a picture of a crop that looks like it has some disease and our AI will be able to disinguish
+        what the problem is with the crop and give the farmer a way to heal the crop. 
+    </p>
+    <button class="button2" onclick="diagnose(null)">Try it Out</button>
 </body>
 </html>

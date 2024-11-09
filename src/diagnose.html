@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            .button {
+                font-family: sans-serif;
+                background-color: #00aaff;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+            }
+            .dropdown {
+                padding: 10px;
+                font-family: sans-serif;
+                margin-bottom: 10px;
+            }
+            body{
+                font-family: sans-serif;
+                background: url("fieldd.jpeg");
+                background-size: 110%;
+            }
+            .nav {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 10px;
+                outline: 3px solid black;
+                border-width: 5px;
+            }
+            .title {
+                margin-top: 0em;
+                margin-left: 19em;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 2em;
+            }
+        </style>
+        <h1 class="title">Diagnose</h1>
+        <select class="dropdown">
+            <option>Select plant type</option>
+            <option>Apple</option>
+            <option>Cherry</option>
+            <option>Corn</option>
+            <option>Grape</option>
+            <option>Peach</option>
+            <option>Bell Pepper</option>
+            <option>Potato</option>
+            <option>Strawberry</option>
+            <option>Tomato</option>
+        </select>
+        <div>
+            <p>Drag and drop or <a href="#">select image</a></p>
+        </div>
+        <div class="nav">
+            <a class="home" href="home.html" style="color: white; font-size: 1.5em">Home</a>
+            <a class="info" href="info.html" style="color: white; font-size: 1.5em">Info</a>
+            <a class="about" href="about.html" style="color: white; font-size: 1.5em;">About</a>
+        </div>
+        <button class="button" onclick="diagnosis(null)">Diagnose</button>
+    </head>
+</html>
