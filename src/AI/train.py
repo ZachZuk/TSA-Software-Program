@@ -12,7 +12,7 @@ img_height, img_width = 200, 200  # sizes of images
 batch_size = 16
 
 # list of plants
-plants = ['Apple', 'Cherry_(including_sour)', 'Corn_(maize)', 'Grape', 'Peach', 'Pepper,_bell', 'Potato', 'Strawberry', 'Tomato']
+plants = ['Grape']
 
 # function to create a model for a plant
 def trainPlant(plant_type):
