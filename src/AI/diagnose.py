@@ -6,7 +6,63 @@ from tensorflow.keras.preprocessing import image
 
 img_height, img_width = 200, 200
 
-plant_types = ['Apple', 'Cherry_(including_sour)', 'Corn_(maize)', 'Grape', 'Peach', 'Pepper,_bell', 'Potato', 'Strawberry']
+# for testing
+plant_types = ['Apple', 'Cherry_(including_sour)', 'Corn_(maize)', 'Grape', 'Peach', 'Pepper,_bell', 'Potato', 'Strawberry', 'Tomato']
+
+# possible classifications because the automatic way mixed things up somehow
+class_indices_mapping = {
+    'Apple': {
+        'Apple___Apple_scab': 0,
+        'Apple___Black_rot': 1,
+        'Apple___Cedar_apple_rust': 2,
+        'Apple___healthy': 3,
+    },
+    'Cherry_(including_sour)': {
+        'Cherry_(including_sour)___Powdery_mildew': 0,
+        'Cherry_(including_sour)___healthy': 1,
+    },
+    'Corn_(maize)': {
+        'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot': 0,
+        'Corn_(maize)___Common_rust_': 1,
+        'Corn_(maize)___Northern_Leaf_Blight': 2,
+        'Corn_(maize)___healthy': 3,
+    },
+    'Grape': {
+        'Grape___Black_rot': 0,
+        'Grape___Esca_(Black_Measles)': 1,
+        'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)': 2,
+        'Grape___healthy': 3,
+    },
+    'Peach': {
+        'Peach___Bacterial_spot': 0,
+        'Peach___healthy': 1,
+    },
+    'Pepper,_bell': {
+        'Pepper,_bell___Bacterial_spot': 0,
+        'Pepper,_bell___healthy': 1,
+    },
+    'Potato': {
+        'Potato___Early_blight': 0,
+        'Potato___Late_blight': 1,
+        'Potato___healthy': 2,
+    },
+    'Strawberry': {
+        'Strawberry___Leaf_scorch': 0,
+        'Strawberry___healthy': 1,
+    },
+    'Tomato': {
+        'Tomato___Bacterial_spot': 0,
+        'Tomato___Early_blight': 1,
+        'Tomato___Late_blight': 2,
+        'Tomato___Leaf_Mold': 3,
+        'Tomato___Septoria_leaf_spot': 4,
+        'Tomato___Spider_mites Two-spotted_spider_mite': 5,
+        'Tomato___Target_Spot': 6,
+        'Tomato___Tomato_Yellow_Leaf_Curl_Virus': 7,
+        'Tomato___Tomato_mosaic_virus': 8,
+        'Tomato___healthy': 9,
+    }
+}
 
 # function to make the image a thing for the cnn and not a jpg
 def load_and_preprocess_image(img_path):
@@ -48,27 +104,39 @@ def diagnose(plant_type, img_path):
 
     # making the path for where the categories are
     test_directory = os.path.join('src', 'Plant-Images', plant_type, 'test')
-    
-    # generate class indices from folder names in the test directory
-    class_indices = {folder: idx for idx, folder in enumerate(os.listdir(test_directory)) if os.path.isdir(os.path.join(test_directory, folder))}
+
+    # get the options from the dictionary from before
+    class_indices = class_indices_mapping.get(plant_type)
 
     # predict
     return predict_image(model, img_path, class_indices)
 
+# list of plant image urls, plant type, and the real diagnosis
 plants = []
 
-correct = 0
+# for tracking accuracy
+incorrect = 0
 
+# getting a bunch of plants and their information for testing
 for i in range(0, 100):
+    # get a random plant type
     plant_type = random.choice(plant_types)
+    # picking a random disease
     plant_diagnosis = random.choice(os.listdir(os.path.join("src", "Plant-Images", plant_type, "train")))
+    # getting a url for that stuff
     img_url = f'src/Plant-Images/{plant_type}/train/{plant_diagnosis}/{random.choice(os.listdir(os.path.join("src", "Plant-Images", plant_type, "train", plant_diagnosis)))}'
+    # putting that all in the plant list
     plants.append([plant_type, img_url, plant_diagnosis])
 
+# diagnosing all those plants
 for plant in plants:
+    # diagnosing
     diagnosis = diagnose(plant[0], plant[1])
     print('Actual diagnosis: ' + plant[2] + ' | Predicted: ' + diagnosis)
-    if diagnosis == plant[2]:
-        correct += 1
+    # for accuracy and finding issues
+    if diagnosis != plant[2]:
+        print("nope")
+        incorrect += 1
 
-print('accuracy: ' + str(correct) + ' out of 100')
+# printing the accuracy
+print('accuracy: ' + str(100-incorrect) + ' out of 100')
