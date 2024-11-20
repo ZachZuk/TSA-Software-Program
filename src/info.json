@@ -1,0 +1,321 @@
+{
+    "Apple___Apple_scab": {
+    "main_header": "Apple Scab Disease",
+    "disease_description_header": "Description",
+    "disease_description": "Apple scab is a fungal disease caused by *Venturia inaequalis*. Symptoms include olive-green or brown spots on leaves and fruits, leading to premature leaf drop and deformed fruits.",
+    "images": [
+        "path/to/apple_scab_image1.jpg",
+        "path/to/apple_scab_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Apply fungicides containing captan or myclobutanil during the growing season. Prune trees to improve air circulation and remove infected debris."
+    },
+    "Apple___Black_rot": {
+    "main_header": "Black Rot in Apples",
+    "disease_description_header": "Description",
+    "disease_description": "Black rot, caused by *Botryosphaeria obtusa*, affects leaves, fruits, and twigs. Symptoms include circular brown spots on leaves, sunken black cankers on twigs, and rotting of fruits.",
+    "images": [
+        "path/to/black_rot_image1.jpg",
+        "path/to/black_rot_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Remove and destroy infected plant parts. Use fungicides such as thiophanate-methyl or copper-based sprays."
+    },
+    "Apple___Cedar_apple_rust": {
+    "main_header": "Cedar-Apple Rust",
+    "disease_description_header": "Description",
+    "disease_description": "Cedar-apple rust is a fungal disease caused by *Gymnosporangium juniperi-virginianae*. Symptoms include yellow-orange spots on apple leaves and fruit, which can lead to deformation.",
+    "images": [
+        "path/to/cedar_apple_rust_image1.jpg",
+        "path/to/cedar_apple_rust_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Use fungicides such as propiconazole or myclobutanil during early leaf development. Remove nearby cedar trees if possible."
+    },
+    "Apple___healthy": {
+    "main_header": "Healthy Apple Tree",
+    "disease_description_header": "Description",
+    "disease_description": "This apple tree shows no signs of disease. Healthy trees have vibrant green leaves and firm, spotless fruits.",
+    "images": [
+        "path/to/healthy_apple_image1.jpg",
+        "path/to/healthy_apple_image2.jpg"
+    ],
+    "treatment_header": "Care",
+    "treatment": "Regularly inspect for pests or diseases. Provide proper watering, fertilization, and pruning to maintain health."
+    },
+    "Cherry_(including_sour)___Powdery_mildew": {
+    "main_header": "Powdery Mildew on Cherries",
+    "disease_description_header": "Description",
+    "disease_description": "Powdery mildew is caused by fungal pathogens like *Podosphaera clandestina*. Symptoms include a white, powdery coating on leaves and fruit.",
+    "images": [
+        "path/to/cherry_powdery_mildew_image1.jpg",
+        "path/to/cherry_powdery_mildew_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Apply sulfur-based or potassium bicarbonate fungicides. Ensure proper air circulation by pruning dense canopies."
+    },
+    "Cherry_(including_sour)___healthy": {
+    "main_header": "Healthy Cherry Tree",
+    "disease_description_header": "Description",
+    "disease_description": "This cherry tree is healthy, showing no symptoms of disease. Leaves are lush and fruit is free from spots or deformities.",
+    "images": [
+        "path/to/healthy_cherry_image1.jpg",
+        "path/to/healthy_cherry_image2.jpg"
+    ],
+    "treatment_header": "Care",
+    "treatment": "Regularly check for pests or signs of disease. Water properly and ensure the tree gets adequate sunlight."
+    },
+    "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+    "main_header": "Gray Leaf Spot in Corn",
+    "disease_description_header": "Description",
+    "disease_description": "Gray leaf spot is caused by *Cercospora zeae-maydis*. Symptoms include long, rectangular grayish lesions on leaves, which can reduce photosynthesis.",
+    "images": [
+        "path/to/gray_leaf_spot_image1.jpg",
+        "path/to/gray_leaf_spot_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Use resistant varieties and apply fungicides such as strobilurins or triazoles during early infection."
+    },
+    "Corn_(maize)___Common_rust_": {
+    "main_header": "Common Rust in Corn",
+    "disease_description_header": "Description",
+    "disease_description": "Common rust is caused by *Puccinia sorghi*. Symptoms include small, round reddish-brown pustules on both sides of leaves.",
+    "images": [
+        "path/to/common_rust_image1.jpg",
+        "path/to/common_rust_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Plant resistant hybrids and apply fungicides such as azoxystrobin if necessary."
+    },
+    "Corn_(maize)___Northern_Leaf_Blight": {
+    "main_header": "Northern Leaf Blight",
+    "disease_description_header": "Description",
+    "disease_description": "Northern leaf blight is caused by *Exserohilum turcicum*. Symptoms include cigar-shaped lesions on leaves, which can coalesce and cause leaf death.",
+    "images": [
+        "path/to/northern_leaf_blight_image1.jpg",
+        "path/to/northern_leaf_blight_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Use resistant hybrids and apply fungicides such as mancozeb or pyraclostrobin."
+    },
+    "Corn_(maize)___healthy": {
+    "main_header": "Healthy Corn Plant",
+    "disease_description_header": "Description",
+    "disease_description": "This corn plant is healthy, with no visible signs of disease. Leaves are green and free of lesions or spots.",
+    "images": [
+        "path/to/healthy_corn_image1.jpg",
+        "path/to/healthy_corn_image2.jpg"
+    ],
+    "treatment_header": "Care",
+    "treatment": "Ensure proper fertilization, watering, and pest monitoring to maintain health."
+    },
+    "Peach___Bacterial_spot": {
+    "main_header": "Bacterial Spot on Peach",
+    "disease_description_header": "Description",
+    "disease_description": "Bacterial spot, caused by *Xanthomonas campestris pv. pruni*, affects peach leaves, fruits, and twigs. Symptoms include dark, sunken spots on leaves and fruits, which may crack as the fruit develops.",
+    "images": [
+        "path/to/peach_bacterial_spot_image1.jpg",
+        "path/to/peach_bacterial_spot_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Use copper-based bactericides during the growing season. Prune infected branches and avoid overhead watering to reduce the spread."
+    },
+    "Peach___healthy": {
+    "main_header": "Healthy Peach Tree",
+    "disease_description_header": "Description",
+    "disease_description": "This peach tree is healthy, with no visible signs of disease. Leaves are vibrant green, and fruits are smooth and free of spots.",
+    "images": [
+        "path/to/healthy_peach_image1.jpg",
+        "path/to/healthy_peach_image2.jpg"
+    ],
+    "treatment_header": "Care",
+    "treatment": "Ensure proper fertilization, watering, and pruning. Monitor for signs of pests or diseases regularly."
+    },
+    "Pepper,_bell___Bacterial_spot": {
+    "main_header": "Bacterial Spot on Bell Pepper",
+    "disease_description_header": "Description",
+    "disease_description": "Bacterial spot, caused by *Xanthomonas campestris pv. vesicatoria*, leads to small, water-soaked spots on leaves and fruits. These spots may enlarge and turn brown, causing defoliation and fruit blemishes.",
+    "images": [
+        "path/to/bell_pepper_bacterial_spot_image1.jpg",
+        "path/to/bell_pepper_bacterial_spot_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Use copper-based bactericides and avoid planting in contaminated soil. Rotate crops and use resistant varieties where available."
+    },
+    "Pepper,_bell___healthy": {
+    "main_header": "Healthy Bell Pepper Plant",
+    "disease_description_header": "Description",
+    "disease_description": "This bell pepper plant is healthy, with lush green leaves and firm, spotless fruits.",
+    "images": [
+        "path/to/healthy_bell_pepper_image1.jpg",
+        "path/to/healthy_bell_pepper_image2.jpg"
+    ],
+    "treatment_header": "Care",
+    "treatment": "Provide adequate sunlight, water consistently, and monitor for pests or diseases."
+    },
+    "Potato___Early_blight": {
+    "main_header": "Early Blight in Potato",
+    "disease_description_header": "Description",
+    "disease_description": "Early blight, caused by *Alternaria solani*, causes concentric ring spots on leaves and stems. The disease progresses to leaf yellowing and defoliation.",
+    "images": [
+        "path/to/potato_early_blight_image1.jpg",
+        "path/to/potato_early_blight_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Apply fungicides such as chlorothalonil or mancozeb. Rotate crops and remove infected plant debris."
+    },
+    "Potato___Late_blight": {
+    "main_header": "Late Blight in Potato",
+    "disease_description_header": "Description",
+    "disease_description": "Late blight, caused by *Phytophthora infestans*, is characterized by water-soaked lesions on leaves and stems, often with a whitish mold underneath. Tubers may rot in the field or storage.",
+    "images": [
+        "path/to/potato_late_blight_image1.jpg",
+        "path/to/potato_late_blight_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Use fungicides like metalaxyl or chlorothalonil. Remove infected plants and avoid overhead irrigation."
+    },
+    "Potato___healthy": {
+    "main_header": "Healthy Potato Plant",
+    "disease_description_header": "Description",
+    "disease_description": "This potato plant is healthy, with no visible signs of disease. Leaves are green, and tubers are firm and free of blemishes.",
+    "images": [
+        "path/to/healthy_potato_image1.jpg",
+        "path/to/healthy_potato_image2.jpg"
+    ],
+    "treatment_header": "Care",
+    "treatment": "Ensure proper crop rotation, irrigation, and pest monitoring to maintain health."
+    },
+    "Strawberry___Leaf_scorch": {
+    "main_header": "Leaf Scorch in Strawberry",
+    "disease_description_header": "Description",
+    "disease_description": "Leaf scorch, caused by *Diplocarpon earlianum*, presents as irregular dark purple spots on leaves, which enlarge and turn brown. This can cause leaves to wither and reduce fruit yield.",
+    "images": [
+        "path/to/strawberry_leaf_scorch_image1.jpg",
+        "path/to/strawberry_leaf_scorch_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Apply fungicides such as captan or thiophanate-methyl. Remove infected leaves and improve air circulation."
+    },
+    "Strawberry___healthy": {
+    "main_header": "Healthy Strawberry Plant",
+    "disease_description_header": "Description",
+    "disease_description": "This strawberry plant is healthy, with green leaves and bright, unblemished fruits.",
+    "images": [
+        "path/to/healthy_strawberry_image1.jpg",
+        "path/to/healthy_strawberry_image2.jpg"
+    ],
+    "treatment_header": "Care",
+    "treatment": "Regularly inspect for signs of pests or diseases. Provide consistent watering and fertilization for optimal growth."
+    },
+    "Tomato___Bacterial_spot": {
+    "main_header": "Bacterial Spot on Tomato",
+    "disease_description_header": "Description",
+    "disease_description": "Bacterial spot is caused by *Xanthomonas vesicatoria*. Symptoms include small, water-soaked lesions on the leaves, which eventually turn brown. The disease can also affect fruit, leading to lesions and early fruit drop.",
+    "images": [
+        "path/to/tomato_bacterial_spot_image1.jpg",
+        "path/to/tomato_bacterial_spot_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Use copper-based bactericides and practice crop rotation. Remove infected plants and avoid overhead watering."
+    },
+    "Tomato___Early_blight": {
+    "main_header": "Early Blight on Tomato",
+    "disease_description_header": "Description",
+    "disease_description": "Early blight, caused by *Alternaria solani*, causes circular dark spots with concentric rings on leaves. These spots often turn yellow, causing premature leaf drop, which reduces yield.",
+    "images": [
+        "path/to/tomato_early_blight_image1.jpg",
+        "path/to/tomato_early_blight_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Apply fungicides such as chlorothalonil or mancozeb. Practice crop rotation and remove infected plant debris."
+    },
+    "Tomato___Late_blight": {
+    "main_header": "Late Blight on Tomato",
+    "disease_description_header": "Description",
+    "disease_description": "Late blight, caused by *Phytophthora infestans*, presents with water-soaked lesions on leaves and stems, often with a grayish mold underneath. It can cause fruit rot and rapid plant death.",
+    "images": [
+        "path/to/tomato_late_blight_image1.jpg",
+        "path/to/tomato_late_blight_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Use fungicides such as mefenoxam or chlorothalonil. Remove infected plants and reduce humidity around the plants."
+    },
+    "Tomato___Leaf_Mold": {
+    "main_header": "Leaf Mold on Tomato",
+    "disease_description_header": "Description",
+    "disease_description": "Leaf mold, caused by *Cladosporium fulvum*, leads to yellow spots on the upper leaf surface with a fuzzy, olive-green growth underneath. This disease can reduce photosynthesis and yield.",
+    "images": [
+        "path/to/tomato_leaf_mold_image1.jpg",
+        "path/to/tomato_leaf_mold_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Apply fungicides like mancozeb or copper-based products. Remove infected leaves and increase air circulation."
+    },
+    "Tomato___Septoria_leaf_spot": {
+    "main_header": "Septoria Leaf Spot on Tomato",
+    "disease_description_header": "Description",
+    "disease_description": "Septoria leaf spot, caused by *Septoria lycopersici*, causes small, dark brown spots with light-colored centers on lower leaves. As the disease progresses, it causes leaf drop and reduced fruit production.",
+    "images": [
+        "path/to/tomato_septoria_leaf_spot_image1.jpg",
+        "path/to/tomato_septoria_leaf_spot_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Use fungicides containing chlorothalonil or copper sulfate. Prune infected leaves and improve plant spacing to reduce humidity."
+    },
+    "Tomato___Spider_mites_Two-spotted_spider_mite": {
+    "main_header": "Spider Mites on Tomato",
+    "disease_description_header": "Description",
+    "disease_description": "Spider mites, particularly the *Tetranychus urticae* species, cause stippling and yellowing of leaves. Severe infestations may lead to leaf drop and webbing on the undersides of leaves.",
+    "images": [
+        "path/to/tomato_spider_mites_image1.jpg",
+        "path/to/tomato_spider_mites_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Use miticides like abamectin or neem oil. Increase humidity and spray the plants with water to reduce mite populations."
+    },
+    "Tomato___Target_Spot": {
+    "main_header": "Target Spot on Tomato",
+    "disease_description_header": "Description",
+    "disease_description": "Target spot, caused by *Corynespora cassiicola*, shows dark, round spots with concentric rings on leaves. Infected plants may show reduced vigor and fruit yield.",
+    "images": [
+        "path/to/tomato_target_spot_image1.jpg",
+        "path/to/tomato_target_spot_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Apply fungicides containing chlorothalonil or azoxystrobin. Remove infected leaves and practice good crop rotation."
+    },
+    "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+    "main_header": "Tomato Yellow Leaf Curl Virus",
+    "disease_description_header": "Description",
+    "disease_description": "Tomato yellow leaf curl virus (TYLCV), transmitted by whiteflies, causes yellowing and curling of leaves, stunted growth, and reduced yield.",
+    "images": [
+        "path/to/tomato_yellow_leaf_curl_image1.jpg",
+        "path/to/tomato_yellow_leaf_curl_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Control whiteflies using insecticides or biological control agents. Remove infected plants to limit virus spread."
+    },
+    "Tomato___Tomato_mosaic_virus": {
+    "main_header": "Tomato Mosaic Virus",
+    "disease_description_header": "Description",
+    "disease_description": "Tomato mosaic virus causes mottling and streaking on leaves, with some plants showing stunted growth and deformed fruits. This virus is spread by handling infected plants or through infected seeds.",
+    "images": [
+        "path/to/tomato_mosaic_virus_image1.jpg",
+        "path/to/tomato_mosaic_virus_image2.jpg"
+    ],
+    "treatment_header": "Treatment",
+    "treatment": "Remove and destroy infected plants immediately. Disinfect tools and avoid planting with infected seeds."
+    },
+    "Tomato___healthy": {
+    "main_header": "Healthy Tomato Plant",
+    "disease_description_header": "Description",
+    "disease_description": "This tomato plant is healthy, showing no signs of disease. Leaves are green, fruits are free of spots, and the plant is growing vigorously.",
+    "images": [
+        "path/to/healthy_tomato_image1.jpg",
+        "path/to/healthy_tomato_image2.jpg"
+    ],
+    "treatment_header": "Care",
+    "treatment": "Ensure proper watering, sunlight, and soil nutrition. Regularly check for pests and disease signs."
+    }
+}      
