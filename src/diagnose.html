@@ -157,7 +157,7 @@
 <body>
     <div class="glass-container">
         <h1 class="title">Diagnose</h1>
-        <select class="dropdown">
+        <select class="dropdown" id="plant-dropdown">
             <option class="inside">Select Plant Type</option>
             <option class="inside">Apple</option>
             <option class="inside">Cherry</option>
@@ -170,9 +170,12 @@
             <option class="inside">Tomato</option>
         </select>
         <div class="box">
-            <p class="caption">Drag and drop or <a href="#">select image</a></p>
+            <input type="file" id="file-input" accept="image/*" style="display: none;" />
+            <label for="file-input">
+                <p class="caption">Drag and drop or select image</p>
+            </label>
         </div>
-        <button class="button" onclick="diagnosis(null)">Diagnose</button>
+        <button class="button" id="diagnose-button">Diagnose</button>
     </div>
     <div class="nav">
         <a class="home" href="home.html">Home</a>

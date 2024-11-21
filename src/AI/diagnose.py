@@ -1,8 +1,12 @@
+import logging
 import random
 import numpy as np
 import os
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 img_height, img_width = 200, 200
 
@@ -99,44 +103,95 @@ def predict_image(model, img_path, class_indices):
 
 # function to diagnose a plant start to finish
 def diagnose(plant_type, img_path):
-    # loading in the right model for the plant
-    model = load_model(f'models/{plant_type}_model.keras')
+    try:
+        # Log the diagnosis attempt
+        logger.debug(f"Starting diagnosis for {plant_type}")
+        logger.debug(f"Image path: {img_path}")
 
-    # making the path for where the categories are
-    test_directory = os.path.join('src', 'Plant-Images', plant_type, 'test')
+        # Check if model file exists
+        model_path = f'models/{plant_type}_model.keras'
+        if not os.path.exists(model_path):
+            logger.error(f"Model file not found: {model_path}")
+            raise FileNotFoundError(f"Model file for {plant_type} not found")
 
-    # get the options from the dictionary from before
-    class_indices = class_indices_mapping.get(plant_type)
+        # loading in the right model for the plant
+        logger.debug(f"Loading model from {model_path}")
+        model = load_model(model_path)
 
-    # predict
-    return predict_image(model, img_path, class_indices)
+        # making the path for where the categories are
+        test_directory = os.path.join('src', 'Plant-Images', plant_type, 'test')
+        logger.debug(f"Test directory: {test_directory}")
 
-# list of plant image urls, plant type, and the real diagnosis
-plants = []
+        # get the options from the dictionary from before
+        class_indices = class_indices_mapping.get(plant_type)
+        if not class_indices:
+            logger.error(f"No class indices found for {plant_type}")
+            raise ValueError(f"No class indices found for {plant_type}")
 
-# for tracking accuracy
-incorrect = 0
+        # predict
+        logger.debug("Starting image prediction")
+        prediction = predict_image(model, img_path, class_indices)
+        logger.debug(f"Prediction result: {prediction}")
 
-# getting a bunch of plants and their information for testing
-for i in range(0, 100):
-    # get a random plant type
-    plant_type = random.choice(plant_types)
-    # picking a random disease
-    plant_diagnosis = random.choice(os.listdir(os.path.join("src", "Plant-Images", plant_type, "train")))
-    # getting a url for that stuff
-    img_url = f'src/Plant-Images/{plant_type}/train/{plant_diagnosis}/{random.choice(os.listdir(os.path.join("src", "Plant-Images", plant_type, "train", plant_diagnosis)))}'
-    # putting that all in the plant list
-    plants.append([plant_type, img_url, plant_diagnosis])
+        return prediction
 
-# diagnosing all those plants
-for plant in plants:
-    # diagnosing
-    diagnosis = diagnose(plant[0], plant[1])
-    print('Actual diagnosis: ' + plant[2] + ' | Predicted: ' + diagnosis)
-    # for accuracy and finding issues
-    if diagnosis != plant[2]:
-        print("nope")
-        incorrect += 1
+    except Exception as e:
+        logger.error(f"Error in diagnosis: {str(e)}")
+        raise
 
-# printing the accuracy
-print('accuracy: ' + str(100-incorrect) + ' out of 100')
+# Modify predict_image to add more logging
+def predict_image(model, img_path, class_indices):
+    try:
+        logger.debug(f"Preprocessing image: {img_path}")
+        # load and preprocess the image
+        img_array = load_and_preprocess_image(img_path)
+        
+        logger.debug("Making prediction")
+        # making the prediction
+        predictions = model.predict(img_array)
+        
+        # get the predicted class index
+        predicted_class_index = np.argmax(predictions, axis=1)[0]
+        
+        # stuff for choosing the option basically
+        class_labels = list(class_indices.keys())
+        predicted_class_label = class_labels[predicted_class_index]
+        
+        logger.debug(f"Predicted class: {predicted_class_label}")
+        logger.debug(f"Prediction probabilities: {predictions}")
+        
+        return predicted_class_label
+
+    except Exception as e:
+        logger.error(f"Error in image prediction: {str(e)}")
+        raise
+
+# # list of plant image urls, plant type, and the real diagnosis
+# plants = []
+
+# # for tracking accuracy
+# incorrect = 0
+
+# # getting a bunch of plants and their information for testing
+# for i in range(0, 100):
+#     # get a random plant type
+#     plant_type = random.choice(plant_types)
+#     # picking a random disease
+#     plant_diagnosis = random.choice(os.listdir(os.path.join("src", "Plant-Images", plant_type, "train")))
+#     # getting a url for that stuff
+#     img_url = f'src/Plant-Images/{plant_type}/train/{plant_diagnosis}/{random.choice(os.listdir(os.path.join("src", "Plant-Images", plant_type, "train", plant_diagnosis)))}'
+#     # putting that all in the plant list
+#     plants.append([plant_type, img_url, plant_diagnosis])
+
+# # diagnosing all those plants
+# for plant in plants:
+#     # diagnosing
+#     diagnosis = diagnose(plant[0], plant[1])
+#     print('Actual diagnosis: ' + plant[2] + ' | Predicted: ' + diagnosis)
+#     # for accuracy and finding issues
+#     if diagnosis != plant[2]:
+#         print("nope")
+#         incorrect += 1
+
+# # printing the accuracy
+# print('accuracy: ' + str(100-incorrect) + ' out of 100')
