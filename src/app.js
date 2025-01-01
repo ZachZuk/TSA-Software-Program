@@ -32,8 +32,11 @@ const plantConversions = {
     'Tomato': 'Tomato'
 }
 
+
+const diagnoseButton = document.getElementById('diagnose-button');
+console.log(diagnoseButton)
 // Add an event listener to the diagnose button
-document.getElementById('diagnose-button').addEventListener('click', (event) => {
+diagnoseButton.addEventListener('click', async (event) => {  
   // Get the selected plant type
   const plantType = plantDropdown.options[plantDropdown.selectedIndex].text;
 
@@ -58,37 +61,16 @@ document.getElementById('diagnose-button').addEventListener('click', (event) => 
   formData.append('plant_type', plantConversions[plantType]);
 
   // Send the form data to the server
-  fetch('http://127.0.0.1:5000/diagnose', {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => {
-    console.log('Full response:', response);
-    console.log('Response status:', response.status);
-    
-    if (!response.ok) {
-      return response.text().then(text => {
-        console.error('Response text:', text);
-        throw new Error(`HTTP error! status: ${response.status}, text: ${text}`);
-      });
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log('Successful response data:', data);
-    alert(data)
-    
-    // Handle case where plant info might be empty
-    const plantInfo = data || 'No additional information available';
-    
-    alert(`Diagnosis: ${data.main_header}
-
-Plant Info: ${typeof plantInfo === 'object' 
-  ? JSON.stringify(plantInfo, null, 2) 
-  : plantInfo}`);
-  })
-  .catch(error => {
-    console.error('Comprehensive error:', error);
-    alert('uh oh');
-  });
+  try {
+    const response = await fetch('http://127.0.0.1:5000/diagnose', {
+      method: 'POST',
+      body: formData,
+    });
+    const data = await response.json();
+    alert(data);
+    alert(data.diagnosis);
+  } catch (error) {
+    console.error(error);
+    alert(error);
+  }
 });

@@ -109,7 +109,8 @@ def diagnose(plant_type, img_path):
         logger.debug(f"Image path: {img_path}")
 
         # Check if model file exists
-        model_path = f'models/{plant_type}_model.keras'
+        model_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'models', f'{plant_type}_model.keras'))
+        print(model_path)
         if not os.path.exists(model_path):
             logger.error(f"Model file not found: {model_path}")
             raise FileNotFoundError(f"Model file for {plant_type} not found")
@@ -177,9 +178,9 @@ def predict_image(model, img_path, class_indices):
 #     # get a random plant type
 #     plant_type = random.choice(plant_types)
 #     # picking a random disease
-#     plant_diagnosis = random.choice(os.listdir(os.path.join("src", "Plant-Images", plant_type, "train")))
+#     plant_diagnosis = random.choice(os.listdir(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', "Plant-Images", plant_type, "train"))))
 #     # getting a url for that stuff
-#     img_url = f'src/Plant-Images/{plant_type}/train/{plant_diagnosis}/{random.choice(os.listdir(os.path.join("src", "Plant-Images", plant_type, "train", plant_diagnosis)))}'
+#     img_url = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', "Plant-Images", plant_type, "train", plant_diagnosis)), random.choice(os.listdir(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', "Plant-Images", plant_type, "train", plant_diagnosis)))))
 #     # putting that all in the plant list
 #     plants.append([plant_type, img_url, plant_diagnosis])
 
