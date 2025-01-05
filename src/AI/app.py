@@ -12,7 +12,14 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..
 UPLOADS_FOLDER = os.path.join(PROJECT_ROOT, 'uploads')
 
 app = Flask(__name__, static_folder='../')
-CORS(app)
+CORS(app, resources={
+    r"/diagnose": {
+        "origins": ["http://127.0.0.1:5000", "http://localhost:5000", "http://127.0.0.1:5500"], 
+        "methods": ["POST"],
+        "allow_headers": ["Content-Type", "Accept"],
+        "expose_headers": ["Content-Type"]
+    }
+})
 
 # Add detailed logging
 import logging
@@ -76,11 +83,9 @@ def diagnose_plant():
                 'traceback': traceback.format_exc()
             }), 500
 
-        print(diagnosis)
-
-        # Return the diagnosis and plant information as JSON
-        print("This is being returned: " + str(jsonify({'diagnosis': diagnosis})))
-        return jsonify({'diagnosis': diagnosis})
+        response = jsonify({'diagnosis': diagnosis})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
     
     except Exception as e:
         # Log the full error traceback
