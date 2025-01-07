@@ -27,9 +27,9 @@
             position: absolute;
             width: 80%;
             max-width: 70em;
-            height: 70%;
+            height: 80%;
             max-height: 45em;
-            padding: 2em;
+            padding: 0.5em;
             background: rgba(220, 220, 220, 0.2);
             border-radius: 10px;
             backdrop-filter: blur(8px);
@@ -47,13 +47,19 @@
         }
 
         .sub-header {
-            font-size: xx-large;
+            font-size: x-large;
             font-weight: 400;
             text-shadow: 1px 1px 8px rgba(56, 68, 67, 0.6);
+            margin-bottom: 0.1em;
+        }
+
+        .details {
+            font-size: large;
+            text-shadow: 1px 1px 8px rgba(56, 68, 67, 0.7);
         }
 
         .section {
-            margin: 20px 0;
+            margin-bottom: 2em;
         }
 
         .button {
@@ -86,40 +92,43 @@
             margin: 20px 0;
         }
         .image-gallery img {
-            max-width: 300px;
+            max-width: 150px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .buttons-container {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 40px;
+            margin-bottom: 2em;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
 </head>
 <body>
     <div class="glass-container">
         <div class="header">
-            <h1 id="mainHeader">SKibidy bibidy disease</h1>
+            <h1 id="mainHeader">Diagnosing disease . . .</h1>
         </div>
         
         <div class="section">
-            <h2 class="sub-header">Description</h2>
-            <p id="description"></p>
-        </div>
-
-        <div class="section">
+            <h2 class="sub-header" id="descriptionHeader">Description</h2>
+            <p id="description" class="details"></p>
             <div class="image-gallery" id="imageGallery">
                 <!-- Images will be inserted here -->
             </div>
         </div>
 
         <div class="section">
-            <h2 class="sub-header">Treatment</h2>
-            <p id="treatment"></p>
+            <h2 class="sub-header" id="treatmentHeader">Treatment</h2>
+            <p id="treatment" class="details"></p>
         </div>
 
         <div class="buttons-container">
-            <button class="button" onclick="diagnose(null)">Try Another Image</button>
+            <button class="button" onclick="rediagnose()">Try Another Image</button>
         </div>
     </div>
 
@@ -152,17 +161,42 @@
 
                     // Add images to the gallery
                     const gallery = document.getElementById('imageGallery');
+                    gallery.innerHTML = ''; // Clear existing images
+                    
                     diseaseInfo.images.forEach(imgSrc => {
-                        const img = document.createElement('img');
-                        img.src = imgSrc;
-                        img.alt = diseaseInfo.main_header;
-                        gallery.appendChild(img);
+                        // Only add image if source is provided
+                        if (imgSrc && imgSrc.trim() !== '') {
+                            const img = document.createElement('img');
+                            
+                            // Check if it's a full URL or a relative path
+                            if (imgSrc.startsWith('http')) {
+                                img.src = imgSrc;
+                            } else {
+                                // Convert the source path to be relative to the web root
+                                const cleanPath = imgSrc.replace('src/', '/');
+                                img.src = cleanPath;
+                            }
+                            
+                            img.alt = diseaseInfo.main_header;
+                            
+                            // Add error handling
+                            img.onerror = function() {
+                                console.log('Failed to load image:', imgSrc);
+                                this.style.display = 'none'; // Hide failed images
+                            };
+                            
+                            gallery.appendChild(img);
+                        }
                     });
                 })
                 .catch(error => {
                     console.error('Error loading disease information:', error);
                 });
         };
+
+        function rediagnose () {
+            window.location.href = "diagnose.html"
+        }
     </script>
 </body>
 </html>
