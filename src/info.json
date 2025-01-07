@@ -1,11 +1,12 @@
 {
     "Apple___Apple_scab": {
-    "main_header": "Apple Scab Disease",
+    "main_header": "Apple Scab Disease", 
     "disease_description_header": "Description",
     "disease_description": "Apple scab is a fungal disease caused by *Venturia inaequalis*. Symptoms include olive-green or brown spots on leaves and fruits, leading to premature leaf drop and deformed fruits.",
     "images": [
-        "path/to/apple_scab_image1.jpg",
-        "path/to/apple_scab_image2.jpg"
+        "https://usercontent2.hubstatic.com/6577337.jpg",
+        "https://extension.umaine.edu/ipm/wp-content/uploads/sites/44/2010/10/AppleScabsml.jpg",
+        "https://mortonarb.org/app/uploads/2021/02/apple-scab-lesions-2016-0x1120-c-default.jpg"
     ],
     "treatment_header": "Treatment",
     "treatment": "Apply fungicides containing captan or myclobutanil during the growing season. Prune trees to improve air circulation and remove infected debris."
@@ -15,8 +16,8 @@
     "disease_description_header": "Description",
     "disease_description": "Black rot, caused by *Botryosphaeria obtusa*, affects leaves, fruits, and twigs. Symptoms include circular brown spots on leaves, sunken black cankers on twigs, and rotting of fruits.",
     "images": [
-        "path/to/black_rot_image1.jpg",
-        "path/to/black_rot_image2.jpg"
+        "src/Plant-Images/Apple/train/Apple___Black_rot/Apple___Black_rot_7fb51374-f3ae-4dc9-8e0b-f2555252885",
+        "src/Plant-Images/Apple/train/Apple___Black_rot/Apple___Black_rot_8fb51374-f3ae-4dc9-8e0b-f2555252885"
     ],
     "treatment_header": "Treatment",
     "treatment": "Remove and destroy infected plant parts. Use fungicides such as thiophanate-methyl or copper-based sprays."
@@ -26,8 +27,8 @@
     "disease_description_header": "Description",
     "disease_description": "Cedar-apple rust is a fungal disease caused by *Gymnosporangium juniperi-virginianae*. Symptoms include yellow-orange spots on apple leaves and fruit, which can lead to deformation.",
     "images": [
-        "path/to/cedar_apple_rust_image1.jpg",
-        "path/to/cedar_apple_rust_image2.jpg"
+        "https://cdn.britannica.com/61/185161-050-726ED959/spots-Orange-cedar-apple-rust-disease-apple-leaf.jpg",
+        "https://th.bing.com/th/id/OIP.uUOL9yC0uIpURsGum4BmRgHaEl?rs=1&pid=ImgDetMain"
     ],
     "treatment_header": "Treatment",
     "treatment": "Use fungicides such as propiconazole or myclobutanil during early leaf development. Remove nearby cedar trees if possible."
@@ -37,8 +38,8 @@
     "disease_description_header": "Description",
     "disease_description": "This apple tree shows no signs of disease. Healthy trees have vibrant green leaves and firm, spotless fruits.",
     "images": [
-        "path/to/healthy_apple_image1.jpg",
-        "path/to/healthy_apple_image2.jpg"
+        "src/Plant-Images/Apple/train/Apple___healthy/Apple___healthy_36980863-22cb-4e05-a1f6-53039a89993a___",
+        "src/Plant-Images/Apple/train/Apple___healthy/Apple___healthy_d89ecf86-b89a-4be1-9ac9-017d54734563___"
     ],
     "treatment_header": "Care",
     "treatment": "Regularly inspect for pests or diseases. Provide proper watering, fertilization, and pruning to maintain health."
@@ -81,8 +82,8 @@
     "disease_description_header": "Description",
     "disease_description": "Common rust is caused by *Puccinia sorghi*. Symptoms include small, round reddish-brown pustules on both sides of leaves.",
     "images": [
-        "path/to/common_rust_image1.jpg",
-        "path/to/common_rust_image2.jpg"
+        "src/Plant-Images/Corn_(maize)/train/Corn_(maize)___Common_rust_/Corn_(maize)___Common_rust__RS_Rust",
+        "src/Plant-Images/Corn_(maize)/train/Corn_(maize)___Common_rust_/Corn_(maize)___Common_rust_2"
     ],
     "treatment_header": "Treatment",
     "treatment": "Plant resistant hybrids and apply fungicides such as azoxystrobin if necessary."
@@ -213,8 +214,8 @@
     "disease_description_header": "Description",
     "disease_description": "Bacterial spot is caused by *Xanthomonas vesicatoria*. Symptoms include small, water-soaked lesions on the leaves, which eventually turn brown. The disease can also affect fruit, leading to lesions and early fruit drop.",
     "images": [
-        "path/to/tomato_bacterial_spot_image1.jpg",
-        "path/to/tomato_bacterial_spot_image2.jpg"
+        "src/Plant-Images/Tomato/train/Tomato___Bacterial_spot/Tomato___Bacterial_spot_144352ee-0f8d-44cc-9db",
+        "src/Plant-Images/Tomato/train/Tomato___Bacterial_spot/Tomato___Bacterial_spot_28357fdb-17f9-49e4-a10"
     ],
     "treatment_header": "Treatment",
     "treatment": "Use copper-based bactericides and practice crop rotation. Remove infected plants and avoid overhead watering."

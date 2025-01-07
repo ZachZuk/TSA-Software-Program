@@ -1,7 +1,8 @@
 // function for going from the home page to the diagnosis page and also run the python code for diagnosing the plant
-function diagnosis(plant) {
-    window.location.href = "diagnosis.html";
-    // create a file with info about diagnosis for other pages to use
+function diagnosis(diagnosisResult) {
+  // Store the diagnosis result in sessionStorage
+  sessionStorage.setItem('diagnosisResult', diagnosisResult);
+  window.location.href = "diagnosis.html";
 }
 
 function diagnose(plant) {
@@ -81,7 +82,7 @@ diagnoseButton.addEventListener('click', async (event) => {
     console.log('Response data:', data);
     
     if (data && data.diagnosis) {
-      alert(data.diagnosis);
+      diagnosis(data.diagnosis);
     } else {
       alert('Invalid response format from server');
     }
