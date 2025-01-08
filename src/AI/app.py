@@ -26,6 +26,14 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
+@app.route('/generate', methods=['POST'])
+def generate():
+    try:
+        print(f"Form Data: {request.form}")
+    except Exception as e:
+        print(e)
+
+
 @app.route('/diagnose', methods=['POST'])
 def diagnose_plant():    
     try:
