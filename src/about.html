@@ -25,7 +25,7 @@
             margin-top: 0.5em;
         }
         .section {
-            background: rgb(255, 255, 255, 0.5);
+            background: rgba(222, 231, 235, 0.5);
             padding: 20px;
             margin: 14px;
             border-radius: 5px;
@@ -53,6 +53,37 @@
             align-items: center;
             flex-direction: column;
         }
+        .nav {
+            position: absolute;
+            justify-content: space-between;
+            display: flex;
+            top: 0;
+            right: 0;
+            margin: 8px;
+            border-width: 5px;
+            gap: 0.5em;
+            padding: 0.4em;
+            padding-left: 0.6em;
+            padding-right: 0.6em;
+            border-radius: 0.8em;
+            background: rgba(220, 220, 220, 0.2);
+            backdrop-filter: blur(8px);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav a {
+            font-size: 0.9em;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.4em;
+            border-radius: 0.5em;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav a:hover {
+            background: rgba(0, 0, 0, 0.45);
+        }
     </style>
 </head>
 <body>
@@ -61,18 +92,22 @@
         
         <div class="section">
             <h2>What is this tool?</h2>
-            <p>This is a tool made for farmers as well as ordinary people. Providing a picture of a leaf from the plant as well as the plant type, our AI detects what disease it has with 98-100% accuracy. </p>
+            <p>This is a tool made for farmers as well as ordinary people. Providing a picture of a leaf from the plant as well as the plant type, our AI detects what disease it has with 98-100% accuracy. It also gives people the treatments to the disease, helping them keep more plants healthy.</p>
         </div>
 
         <div class="section">
             <h2>Who made it?</h2>
-            <p>This website was developed by our talented in-house web development team, combining modern design principles with user-friendly functionality.</p>
+            <p>This tool was made by two highschool students, Zachary Zukosky and Aaravjeet Singh, as a project for a club.</p>
         </div>
 
         <div class="section">
             <h2>Why was it made?</h2>
-            <p>Our goal was to create an accessible online presence that effectively communicates our brand message while providing value to our visitors. We wanted to build a platform that makes it simple for customers to find what they're looking for.</p>
+            <p>We wanted to make something that could help increase agricultural sustainability and efficency. A tool to reduce crop loss using AI was a great way to do this.</p>
         </div>
+    </div>
+    <div class="nav">
+        <a class="home" href="home.html">Home</a>
+        <a class="diagnose" href="diagnose.html">Diagnose</a>
     </div>
 </body>
 </html>

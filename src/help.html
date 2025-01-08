@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Help</title>
+    <style>
+         body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("fieldd.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .glass-container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 80%;
+            height: 80%;
+            max-height: 80%;
+            padding: 3%;
+            padding-top: 1%;
+            background: rgba(220, 220, 220, 0.2);
+            border-radius: 10px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            display: flex;
+
+            align-items: center;
+            flex-direction: column;
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .image-gallery img {
+            max-width: 100px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section {
+            background: rgba(222, 231, 235, 0.5);
+            padding: 20px;
+            padding-top: 8px;
+            margin: 14px;
+            border-radius: 15px;
+            color: rgb(56, 68, 67)
+        }
+    </style>
+</head>
+<body>
+    <div class="glass-container">
+        <h1>How to Use</h1>
+        <div class="section">
+            <h2>How do I use it?</h2>
+            <p>To diagnose a plant, you first need to get to the diagnose page, which can be accessed through the navbar or from the home page. Then, you need to select the plant you are diagnosing, using the dropdown menu. Then, you pick an image of the leaf of a plant and click diagnose. We will tell you what disease you have, give you example images, and tell you how to treat it.</p>
+            <p>IMPORTANT: Our AI model is not perfect, so make sure the description and example images match your issues. Additionally, info and treatments are not guarenteed to be accurate, this tool is designed to be used as a starting point for curing your plant.</p>
+        </div>
+        <div class="section">
+            <h2>What should I take a picture of?</h2>
+            <p>You should provide a clear and well-lit picture of the LEAF alone. Here are some example images of an ideal image:</p>
+            <div class="image-gallery" id="imageGallery">
+                <img src=".\Plant-Images\Apple\test\Apple___Cedar_apple_rust\Apple___Cedar_apple_rust_5b047b56-77e8-4bbd-8b5c-7c72821b50f0___FREC_C.Rust 0101.JPG"/>
+                <img src=".\Plant-Images\Apple\test\Apple___healthy\Apple___healthy_0e8c4b90-36d4-4b8c-a134-88c344e97ac2___RS_HL 5721.JPG"/>
+                <img src=".\Plant-Images\Cherry_(including_sour)\test\Cherry_(including_sour)___Powdery_mildew\Cherry_(including_sour)___Powdery_mildew_0e95f40f-89aa-40b2-86a6-8e82b7d05bfc___FREC_Pwd.M 0297.JPG"/>
+                <img src=".\Plant-Images\Strawberry\train\Strawberry___healthy\Strawberry___healthy_0de0d575-5dd7-4fca-b003-d4a13354c89d___RS_HL 4629.JPG"/>
+                <img src=".\Plant-Images\Strawberry\test\Strawberry___Leaf_scorch\Strawberry___Leaf_scorch_01be0a55-7fc0-4ea8-a177-8ff4a4611a0a___RS_L.Scorch 0891.JPG"/>
+                <img src=".\Plant-Images\Pepper,_bell\test\Pepper,_bell___Bacterial_spot\Pepper,_bell___Bacterial_spot_1b8d3e98-43d9-441d-93ef-a359e6e9ddc2___NREC_B.Spot 9052.JPG"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
