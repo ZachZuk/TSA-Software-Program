@@ -14,7 +14,6 @@ batch_size = 16
 # list of plants
 plants = ['Grape']
 
-# function to create a model for a plant
 def trainPlant(plant_type):
     # directories for the data
     train_data_dir = f'src\\Plant-Images\\{plant_type}\\train'

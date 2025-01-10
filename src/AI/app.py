@@ -1,8 +1,8 @@
 import json
 import traceback
-from flask import Flask, request, jsonify, render_template, send_from_directory
+from flask import Flask, request, jsonify
 from diagnose import diagnose
-from werkzeug.utils import secure_filename
+from llm import generate
 import os
 from flask_cors import CORS
 import sys
@@ -11,33 +11,41 @@ import sys
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 UPLOADS_FOLDER = os.path.join(PROJECT_ROOT, 'uploads')
 
-app = Flask(__name__, static_folder='../')
+app = Flask(__name__)
 CORS(app, resources={
-    r"/diagnose": {
-        "origins": ["http://127.0.0.1:5000", "http://localhost:5000", "http://127.0.0.1:5500"], 
-        "methods": ["POST"],
+    r"/*": {
+        "origins": ["http://127.0.0.1:5000", "http://localhost:5000", "http://127.0.0.1:5500", "http://localhost:8000"], 
+        "methods": ["POST", "OPTIONS"],
         "allow_headers": ["Content-Type", "Accept"],
         "expose_headers": ["Content-Type"]
     }
 })
 
-# Add detailed logging
 import logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
-@app.route('/generate', methods=['POST'])
-def generate():
+@app.route('/generate', methods=['POST', 'OPTIONS'])
+def generate_response():
+    if request.method == 'OPTIONS':
+        return '', 204
+        
     try:
-        print(f"Form Data: {request.form}")
-    except Exception as e:
-        print(e)
+        logger.debug(f"Generate request received with form data: {request.form}")
+        if 'message' not in request.form:
+            return jsonify({"error": "No message provided"}), 400
 
+        message = request.form['message']
+        result = generate(message)
+        return jsonify({"info": result})
+    except Exception as e:
+        logger.error(f"Error in generate_response: {str(e)}")
+        logger.error(traceback.format_exc())
+        return jsonify({"error": "An error occurred while generating a response."}), 500
 
 @app.route('/diagnose', methods=['POST'])
 def diagnose_plant():    
     try:
-        # Extensive logging of request details
         logger.debug("Diagnosis request received")
         logger.debug(f"Form data: {request.form}")
         logger.debug(f"Files data: {request.files}")
@@ -48,7 +56,7 @@ def diagnose_plant():
 
         # Check if image is present in the request
         if 'image' not in request.files:
-            logger.error("No image file in request")
+            logger.error("No image file in request")          
             print("No image file in request")
             return jsonify({'error': 'No image file'}), 400
         
@@ -62,7 +70,7 @@ def diagnose_plant():
             return jsonify({'error': 'No selected file'}), 400
 
         # Save the image file to the uploads directory
-        filename = secure_filename(image_file.filename)
+        filename = os.path.basename(image_file.filename)
         filepath = os.path.join(UPLOADS_FOLDER, filename)
         
         # Ensure uploads directory exists
@@ -96,7 +104,6 @@ def diagnose_plant():
         return response
     
     except Exception as e:
-        # Log the full error traceback
         logger.error("Unexpected error during diagnosis")
         logger.error(traceback.format_exc())
         print("Unexpected error during diagnosis")

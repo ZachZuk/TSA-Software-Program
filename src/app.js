@@ -96,12 +96,3 @@ diagnoseButton.addEventListener('click', async (event) => {
     alert(`Error: ${error.message}`);
 }
 });
-
-const chatInput = document.getElementById('chat-input');
-chatInput.addEventListener('keypress', (event) => {
-  if (event.key === 'Enter') {
-    event.preventDefault(); // Prevent the default newline behavior
-    // Add your desired action here, e.g., call a function
-    alert('Enter key pressed in textarea');
-  }
-});
