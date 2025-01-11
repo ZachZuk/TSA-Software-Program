@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>About This Website</title>
+    <link rel="icon" href="/favicon.ico">
     <style>
         body, html {
             height: 100%;
@@ -14,7 +15,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url("fieldd.jpeg");
+            background-image: url('https://stacyknows.com/wp-content/uploads/2022/07/pexels-jahoo-clouseau-388415-scaled.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -108,11 +109,10 @@
         </div>
     </div>
     <div class="nav">
-        <a class="home" href="home.html">Home</a>
-        <a class="diagnose" href="diagnose.html">Diagnose</a>
-        <a class="describe" href="describe.html">Describe</a>
-        <a class="help" href="help.html">Help</a>
-        <a href="chat.html">Chat</a>
+        <a class="home" href="{{ url_for('home') }}">Home</a>
+        <a class="diagnose" href="{{ url_for('diagnose') }}">Diagnose</a>
+        <a class="help" href="{{ url_for('help') }}">Help</a>
+        <a href="{{ url_for('chat') }}">Chat</a>
     </div>
 </body>
 </html>

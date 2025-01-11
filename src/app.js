@@ -2,11 +2,11 @@
 function diagnosis(diagnosisResult) {
   // Store the diagnosis result in sessionStorage
   sessionStorage.setItem('diagnosisResult', diagnosisResult);
-  window.location.href = "diagnosis.html";
+  window.location.href = "diagnosis";
 }
 
-function diagnose(plant) {
-    window.location.href = 'diagnose.html';
+function diagnose() {
+    window.location.href = 'diagnose';
 }
 
 // function for switching pages that doesn't need other stuff to be run
@@ -67,7 +67,7 @@ diagnoseButton.addEventListener('click', async (event) => {
   
   try {
     console.log('Starting fetch...');
-    const response = await fetch('http://127.0.0.1:5000/diagnose', {
+    const response = await fetch('http://127.0.0.1:5000/diagnose_plant', {
       method: 'POST',
       body: formData,
       headers: {

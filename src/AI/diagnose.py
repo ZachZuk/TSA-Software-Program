@@ -102,7 +102,7 @@ def predict_image(model, img_path, class_indices):
     return predicted_class_label
 
 # function to diagnose a plant start to finish
-def diagnose(plant_type, img_path):
+def diagnoser(plant_type, img_path):
     try:
         # Log the diagnosis attempt
         logger.debug(f"Starting diagnosis for {plant_type}")

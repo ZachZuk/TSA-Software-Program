@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico">
     <title>Diagnosis Results</title>
     <style>
         @import url("https://fonts.googleapis.com/css?family=Rajdhani:300&display=swap");
@@ -18,7 +19,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url("fieldd.jpeg");
+            background-image: url("https://stacyknows.com/wp-content/uploads/2022/07/pexels-jahoo-clouseau-388415-scaled.jpg");
             background-size: cover;
             background-position: center;
         }
@@ -165,10 +166,10 @@
     </div>
 
     <div class="nav">
-        <a class="about" href="about.html">About</a>
-        <a class="diagnose" href="diagnose.html">Diagnose</a>
-        <a class="help" href="help.html">Help</a>
-        <a href="chat.html">Chat</a>
+        <a class="home" href="{{ url_for('home') }}">Home</a>
+        <a class="about" href="/about">About</a>
+        <a class="help" href="{{ url_for('help') }}">Help</a>
+        <a href="{{ url_for('chat') }}">Chat</a>
     </div>
 
     <script>
@@ -182,7 +183,7 @@
             }
 
             // Fetch the info.json file
-            fetch('info.json')
+            fetch('/info.json')
                 .then(response => response.json())
                 .then(data => {
                     const diseaseInfo = data[diagnosisResult];
@@ -210,10 +211,6 @@
                             // Check if it's a full URL or a relative path
                             if (imgSrc.startsWith('http')) {
                                 img.src = imgSrc;
-                            } else {
-                                // Convert the source path to be relative to the web root
-                                const cleanPath = imgSrc.replace('src/', '/');
-                                img.src = cleanPath;
                             }
                             
                             img.alt = diseaseInfo.main_header;
@@ -234,7 +231,7 @@
         };
 
         function rediagnose () {
-            window.location.href = "diagnose.html"
+            window.location.href = "{{ url_for('diagnose') }}"
         }
     </script>
 </body>

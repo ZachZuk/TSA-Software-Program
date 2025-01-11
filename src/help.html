@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Help</title>
+    <link rel="icon" href="/favicon.ico">
     <style>
          body, html {
             height: 100%;
@@ -15,7 +16,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url("fieldd.jpeg");
+            background-image: url("https://stacyknows.com/wp-content/uploads/2022/07/pexels-jahoo-clouseau-388415-scaled.jpg");
             background-size: cover;
             background-position: center;
         }
@@ -107,23 +108,23 @@
             <h2>What should I take a picture of?</h2>
             <p>You should provide a clear and well-lit picture of the LEAF alone. Here are some example images of an ideal image:</p>
             <div class="image-gallery" id="imageGallery">
-                <img src=".\Plant-Images\Apple\test\Apple___Cedar_apple_rust\Apple___Cedar_apple_rust_5b047b56-77e8-4bbd-8b5c-7c72821b50f0___FREC_C.Rust 0101.JPG"/>
-                <img src=".\Plant-Images\Apple\test\Apple___healthy\Apple___healthy_0e8c4b90-36d4-4b8c-a134-88c344e97ac2___RS_HL 5721.JPG"/>
-                <img src=".\Plant-Images\Cherry_(including_sour)\test\Cherry_(including_sour)___Powdery_mildew\Cherry_(including_sour)___Powdery_mildew_0e95f40f-89aa-40b2-86a6-8e82b7d05bfc___FREC_Pwd.M 0297.JPG"/>
-                <img src=".\Plant-Images\Strawberry\train\Strawberry___healthy\Strawberry___healthy_0de0d575-5dd7-4fca-b003-d4a13354c89d___RS_HL 4629.JPG"/>
-                <img src=".\Plant-Images\Strawberry\test\Strawberry___Leaf_scorch\Strawberry___Leaf_scorch_01be0a55-7fc0-4ea8-a177-8ff4a4611a0a___RS_L.Scorch 0891.JPG"/>
-                <img src=".\Plant-Images\Pepper,_bell\test\Pepper,_bell___Bacterial_spot\Pepper,_bell___Bacterial_spot_1b8d3e98-43d9-441d-93ef-a359e6e9ddc2___NREC_B.Spot 9052.JPG"/>
+                <img src="https://github.com/gabrieldgf4/PlantVillage-Dataset/blob/master/Apple___Apple_scab/00075aa8-d81a-4184-8541-b692b78d398a___FREC_Scab%203335.JPG?raw=true"/>
+                <img src="https://github.com/gabrieldgf4/PlantVillage-Dataset/blob/master/Apple___healthy/0e8c4b90-36d4-4b8c-a134-88c344e97ac2___RS_HL 5721.JPG?raw=true"/>
+                <img src="https://github.com/gabrieldgf4/PlantVillage-Dataset/blob/master/Cherry_(including_sour)___Powdery_mildew/0e95f40f-89aa-40b2-86a6-8e82b7d05bfc___FREC_Pwd.M 0297.JPG?raw=true"/>
+                <img src="https://github.com/gabrieldgf4/PlantVillage-Dataset/blob/master/Strawberry___healthy/0de0d575-5dd7-4fca-b003-d4a13354c89d___RS_HL 4629.JPG?raw=true"/>
+                <img src="https://github.com/gabrieldgf4/PlantVillage-Dataset/blob/master/Strawberry___Leaf_scorch/01be0a55-7fc0-4ea8-a177-8ff4a4611a0a___RS_L.Scorch 0891.JPG?raw=true"/>
+                <img src="https://github.com/gabrieldgf4/PlantVillage-Dataset/blob/master/Pepper,_bell___Bacterial_spot/1b8d3e98-43d9-441d-93ef-a359e6e9ddc2___NREC_B.Spot 9052.JPG?raw=true"/>
             </div>
         </div>
         <div class="section">
-            <p>The diseases that we are able to detect can be found <a href="diseases.html">here</a></p>
+            <p>The diseases that we are able to detect can be found <a href="{{ url_for('diseases') }}">here</a></p>
         </div>
     </div>
     <div class="nav">
-        <a class="home" href="home.html">Home</a>
-        <a class="diagnose" href="diagnose.html">Diagnose</a>
-        <a class="about" href="about.html">About</a>
-        <a href="chat.html">Chat</a>
+        <a class="home" href="{{ url_for('home') }}">Home</a>
+        <a class="diagnose" href="{{ url_for('diagnose') }}">Diagnose</a>
+        <a class="about" href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('chat') }}">Chat</a>
     </div>
 </body>
 </html>

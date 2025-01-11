@@ -3,6 +3,7 @@
 <head class="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico">
     <title>Plant Diagnosis</title>
     <style>
         .button {
@@ -29,7 +30,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url("fieldd.jpeg");
+            background-image: url('https://stacyknows.com/wp-content/uploads/2022/07/pexels-jahoo-clouseau-388415-scaled.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -130,7 +131,7 @@
             transition: box-shadow 0.17s;
         }
     </style>
-    <script src="app.js"></script>
+    <script src="/app.js"></script>
 </head>
 <body>
     <div class="glass-container">
@@ -140,14 +141,13 @@
             giving farmers the ability to take a picture of a crop that looks like it has some disease and our AI will be able to disinguish
             what the problem is with the crop and give the farmer a way to heal the crop. 
         </p>
-        <button class="button2" onclick="diagnose(null)">Try it Out</button>
+        <button class="button2" onclick="diagnose()">Try it Out</button>
     </div>
     <div class="nav">
-        <a class="about" href="about.html">About</a>
-        <a class="diagnose" href="diagnose.html">Diagnose</a>
-        <a class="describe" href="describe.html">Describe</a>
-        <a class="help" href="help.html">Help</a>
-        <a href="chat.html">Chat</a>
+        <a class="diagnose" href="{{ url_for('diagnose') }}">Diagnose</a>
+        <a class="about" href="{{ url_for('about') }}">About</a>
+        <a class="help" href="{{ url_for('help') }}">Help</a>
+        <a href="{{ url_for('chat') }}">Chat</a>
     </div>
 </body>
 </html>

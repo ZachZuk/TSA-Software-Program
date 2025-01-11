@@ -1,7 +1,7 @@
 import json
 import traceback
-from flask import Flask, request, jsonify
-from diagnose import diagnose
+from flask import Flask, request, jsonify, render_template, send_from_directory
+from diagnose import diagnoser
 from llm import generate
 import os
 from flask_cors import CORS
@@ -11,7 +11,7 @@ import sys
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 UPLOADS_FOLDER = os.path.join(PROJECT_ROOT, 'uploads')
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../')
 CORS(app, resources={
     r"/*": {
         "origins": ["http://127.0.0.1:5000", "http://localhost:5000", "http://127.0.0.1:5500", "http://localhost:8000"], 
@@ -43,7 +43,7 @@ def generate_response():
         logger.error(traceback.format_exc())
         return jsonify({"error": "An error occurred while generating a response."}), 500
 
-@app.route('/diagnose', methods=['POST'])
+@app.route('/diagnose_plant', methods=['POST'])
 def diagnose_plant():    
     try:
         logger.debug("Diagnosis request received")
@@ -85,7 +85,7 @@ def diagnose_plant():
 
         # Diagnose the plant disease using the uploaded image
         try:
-            diagnosis = diagnose(plant_type, filepath)
+            diagnosis = diagnoser(plant_type, filepath)
             logger.debug(f"Diagnosis result: {diagnosis}")
             print(f"Diagnosis result: {diagnosis}")
         except Exception as diagnose_error:
@@ -119,6 +119,46 @@ def diagnose_plant():
         # Optional: Remove the uploaded file after processing
         if 'filepath' in locals() and os.path.exists(filepath):
             os.remove(filepath)
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/chat')
+def chat():
+    return render_template('chat.html')
+
+@app.route('/diagnose')
+def diagnose():
+    return render_template('diagnose.html')
+
+@app.route('/diagnosis')
+def diagnosis():
+    return render_template('diagnosis.html')
+
+@app.route('/diseases')
+def diseases():
+    return render_template('diseases.html')
+
+@app.route('/help')
+def help():
+    return render_template('help.html')
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
+@app.route('/info.json')
+def info_json():
+    return send_from_directory('../', 'info.json')
+
+@app.route('/app.js')
+def app_js():
+    return send_from_directory('../', 'app.js')
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('../', 'favicon.ico')
 
 if __name__ == '__main__':
     app.run(debug=True)
