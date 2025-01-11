@@ -1,0 +1,10 @@
+hugchat
+numpy
+Pillow
+Flask
+flask-cors
+transformers
+torch
+scikit-learn
+nltk
+tensorflow

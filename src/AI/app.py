@@ -148,6 +148,10 @@ def help():
 def home():
     return render_template('home.html')
 
+@app.route('/')
+def homepage():
+    return render_template('home.html')
+
 @app.route('/info.json')
 def info_json():
     return send_from_directory('../', 'info.json')
