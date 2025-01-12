@@ -67,7 +67,7 @@ diagnoseButton.addEventListener('click', async (event) => {
   
   try {
     console.log('Starting fetch...');
-    const response = await fetch('http://127.0.0.1:5000/diagnose_plant', {
+    const response = await fetch('https://tsa-software-program.onrender.com/diagnose_plant', {
       method: 'POST',
       body: formData,
       headers: {
