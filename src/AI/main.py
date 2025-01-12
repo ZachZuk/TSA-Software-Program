@@ -13,7 +13,7 @@ UPLOADS_FOLDER = os.path.join(PROJECT_ROOT, 'uploads')
 app = Flask(__name__, template_folder='../')
 CORS(app, resources={
     r"/*": {
-        "origins": ["http://127.0.0.1:5000", "http://localhost:5000", "http://127.0.0.1:5500", "http://localhost:8000"], 
+        "origins": "*",
         "methods": ["POST", "OPTIONS"],
         "allow_headers": ["Content-Type", "Accept"],
         "expose_headers": ["Content-Type"]
@@ -165,4 +165,4 @@ def favicon():
 
 # python web server
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv("PORT", default=5000))
+    app.run()
