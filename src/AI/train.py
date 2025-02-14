@@ -41,7 +41,6 @@ def trainPlant(plant_type):
         class_mode='categorical'
     )
 
-    # making the model
     model = Sequential([
         Conv2D(32, (3, 3), activation='relu', input_shape=(img_height, img_width, 3)),
         MaxPooling2D(pool_size=(2, 2)),
@@ -49,14 +48,14 @@ def trainPlant(plant_type):
         MaxPooling2D(pool_size=(2, 2)),
         Conv2D(128, (3, 3), activation='relu'),
         MaxPooling2D(pool_size=(2, 2)),
-        Conv2D(256, (3, 3), activation='relu'),  # Added more filters
+        Conv2D(256, (3, 3), activation='relu'),
         MaxPooling2D(pool_size=(2, 2)),
-        Conv2D(512, (3, 3), activation='relu'),  # Added another layer
+        Conv2D(512, (3, 3), activation='relu'), 
         MaxPooling2D(pool_size=(2, 2)),
         Flatten(),
-        Dense(256, activation='relu'),  # Increased the number of units in the dense layer
-        Dropout(0.5),  # Regularization to prevent overfitting
-        Dense(len(train_generator.class_indices), activation='softmax')  # Number of classes
+        Dense(256, activation='relu'),  
+        Dropout(0.5), 
+        Dense(len(train_generator.class_indices), activation='softmax') 
     ])
 
     # Early stopping callback
@@ -71,9 +70,9 @@ def trainPlant(plant_type):
     # training the model with early stopping
     model.fit(
         train_generator,
-        epochs=50,  # You can set a higher number of epochs
+        epochs=50,  
         validation_data=test_generator,
-        callbacks=[early_stopping]  # Add early stopping callback
+        callbacks=[early_stopping]  
     )
 
     # printing stuff about the model

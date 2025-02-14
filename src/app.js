@@ -60,6 +60,8 @@ diagnoseButton.addEventListener('click', async (event) => {
     alert('Please select an image');
     return;
   }
+
+  showSpinner();
   
   const formData = new FormData();
   formData.append('image', imageFile);
@@ -85,6 +87,8 @@ diagnoseButton.addEventListener('click', async (event) => {
     
     const data = await response.json();
     console.log('Response data:', data);
+
+    hideSpinner();
     
     if (data && data.diagnosis) {
       diagnosis(data.diagnosis);
@@ -101,3 +105,11 @@ diagnoseButton.addEventListener('click', async (event) => {
     alert(`Error: ${error.message}`);
 }
 });
+
+function showSpinner() {
+  document.getElementById('loading-spinner').style.display = 'block';
+}
+
+function hideSpinner() {
+  document.getElementById('loading-spinner').style.display = 'none';
+}
