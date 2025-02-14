@@ -1,0 +1,92 @@
+Description: “My tomato plant’s older leaves have dark, concentric rings with yellow margins, and the affected leaves seem to be dying slowly.”
+ Diagnosis: Early blight
+
+Description: “I noticed that several of my apple fruits have sunken, dark lesions, and the leaves nearby show irregular brown spots.”
+ Diagnosis: Black rot
+
+Description: “There are many tiny reddish-brown pustules scattered on the corn leaves that sometimes merge into larger patches.”
+ Diagnosis: Common rust
+
+Description: “My grape leaves develop small, water-soaked spots that quickly turn necrotic, leaving behind brown, dry lesions.”
+ Diagnosis: Leaf blight (Isariopsis Leaf Spot)
+
+Description: “The peach tree’s leaves are covered with angular, water-soaked spots that soon become brown and lead to premature leaf drop.”
+ Diagnosis: Bacterial spot
+
+Description: “On my strawberry plants, the leaf edges look scorched and dry, with a subtle brown discoloration that suggests stress from the sun.”
+ Diagnosis: Strawberry Leaf scorch
+
+Description: “My potato plants are wilting rapidly, with dark, water-soaked lesions appearing on the leaves, and a white mold forms underneath.”
+ Diagnosis: Late blight
+
+Description: “My tomato leaves show a mottled pattern of dark and light green with distorted growth; the plant overall appears stunted.”
+ Diagnosis: Tomato mosaic virus
+
+Description: “The leaves on my sour cherry tree are coated with a fine, powdery white substance and exhibit a slight curling on the margins.”
+ Diagnosis: Powdery mildew
+
+Description: “My bell pepper plant’s leaves are smooth and uniformly green with no signs of spots or damage whatsoever.”
+ Diagnosis: Healthy
+
+Description: “My grapevine is showing a patchy, scabby appearance on the leaves and fruit clusters, with a dusty look reminiscent of measles.”
+ Diagnosis: Esca (Black Measles)
+
+Description: “A fuzzy, gray mold is now covering the undersides of my tomato leaves, while the upper surfaces look a bit yellow.”
+ Diagnosis: Leaf Mold
+
+Description: “Long, narrow gray lesions with tan margins have developed along several corn leaves, reducing their overall vibrancy.”
+ Diagnosis: Northern Leaf Blight
+
+Description: “Bright orange, blister-like spots with rust-colored fuzz have appeared on the undersides of my apple leaves.”
+ Diagnosis: Cedar apple rust
+
+Description: “I see stippling and fine webbing on the underside of my tomato leaves, and the leaves have a bronzed appearance overall.”
+ Diagnosis: Spider mites Two-spotted spider mite
+
+Description: “My potato leaves are showing small brown spots with concentric rings, though the new growth still appears fairly green.”
+ Diagnosis: Early blight
+
+Description: “The strawberry patch in my garden is flourishing: dark green leaves and abundant, bright red fruit with no signs of damage.”
+ Diagnosis: Strawberry healthy
+
+Description: “Several tomato leaves now display distinct bullseye lesions with concentric rings, creating a target-like pattern.”
+ Diagnosis: Target Spot
+
+Description: “All my corn plants are growing robustly; the leaves are uniformly green and free from any lesions or discoloration.”
+ Diagnosis: Healthy
+
+Description: “My bell pepper’s leaves are beginning to show irregular water-soaked spots that soon turn brown, especially near the margins.”
+ Diagnosis: Bacterial spot
+
+Description: “The grapevine appears very vigorous with evenly colored leaves and plump, healthy grapes; I can’t spot any disease symptoms.”
+ Diagnosis: Healthy
+
+Description: “My apple tree’s canopy is glossy and uniformly green, with no spots on either the leaves or the fruits.”
+ Diagnosis: Healthy
+
+Description: “New tomato leaves are curling upward and yellowing, and the entire plant’s growth seems stunted compared to last season.”
+ Diagnosis: Tomato Yellow Leaf Curl Virus
+
+Description: “The peach tree is looking great—the foliage is bright green and free of any spots or lesions.”
+ Diagnosis: Healthy
+
+Description: “I’ve observed circular dark spots on the grapevine leaves along with some shriveled, blackened clusters of fruit.”
+ Diagnosis: Black rot
+
+Description: “Small, water-soaked spots appear on my tomato leaves that quickly turn brown and develop a slight yellow halo.”
+ Diagnosis: Bacterial spot
+
+Description: “My potato plants are thriving, with dark green foliage and vigorous growth throughout the field.”
+ Diagnosis: Healthy
+
+Description: “The cherry tree is in full bloom with fresh, vibrant green leaves and no powdery residue or spots in sight.”
+ Diagnosis: Healthy
+
+Description: “Numerous tiny circular lesions with light tan centers are scattered across the tomato foliage, leading to premature leaf drop.”
+ Diagnosis: Septoria leaf spot
+
+Description: “My tomato plant is in serious decline—its leaves are dark, water-soaked, and covered with white fungal growth that turns the tissue brown.”
+ Diagnosis: Late blight
+
+Description: “The maize in my garden is looking perfect, with evenly green leaves and no sign of any fungal or bacterial issues.”
+ Diagnosis: Healthy

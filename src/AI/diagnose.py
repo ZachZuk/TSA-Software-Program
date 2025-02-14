@@ -187,7 +187,7 @@ def predict_image(model, img_path, class_indices):
 # # diagnosing all those plants
 # for plant in plants:
 #     # diagnosing
-#     diagnosis = diagnose(plant[0], plant[1])
+#     diagnosis = diagnoser(plant[0], plant[1])
 #     print('Actual diagnosis: ' + plant[2] + ' | Predicted: ' + diagnosis)
 #     # for accuracy and finding issues
 #     if diagnosis != plant[2]:

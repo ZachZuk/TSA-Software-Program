@@ -16,6 +16,12 @@ function goToPage(page) {
 
 // Get the image file input element
 const imageInput = document.getElementById('file-input');
+if (!imageInput) {
+    console.error('Could not find image input element');
+} else {
+    console.log(imageInput);
+}
+
 
 // Get the dropdown element
 const plantDropdown = document.getElementById('plant-dropdown');
@@ -36,12 +42,11 @@ const plantConversions = {
 
 const diagnoseButton = document.getElementById('diagnose-button');
 console.log(diagnoseButton)
-// Add an event listener to the diagnose button
 diagnoseButton.addEventListener('click', async (event) => {  
-  console.log('Button clicked'); // Debug point 1
+  console.log('Button clicked');
   
   const plantType = plantDropdown.options[plantDropdown.selectedIndex].text;
-  console.log('Plant type:', plantType); // Debug point 2
+  console.log('Plant type:', plantType);
   
   if (!plantConversions[plantType]) {
     alert('Please select a valid plant type');
@@ -49,7 +54,7 @@ diagnoseButton.addEventListener('click', async (event) => {
   }
   
   const imageFile = imageInput.files[0];
-  console.log('Image file:', imageFile); // Debug point 3
+  console.log('Image file:', imageFile);
   
   if (!imageFile) {
     alert('Please select an image');
@@ -60,21 +65,21 @@ diagnoseButton.addEventListener('click', async (event) => {
   formData.append('image', imageFile);
   formData.append('plant_type', plantConversions[plantType]);
   
-  console.log('FormData created with:'); // Debug point 4
+  console.log('FormData created with:');
   for (let [key, value] of formData.entries()) {
     console.log(key, ':', value);
   }
   
   try {
     console.log('Starting fetch...');
-    const response = await fetch('https://tsa-software-program.onrender.com/diagnose_plant', {
+    const response = await fetch('http://127.0.0.1:5000/diagnose_plant', {
       method: 'POST',
       body: formData,
       headers: {
         'Accept': 'application/json'
       },
-      mode: 'cors',  // Explicitly state we're making a CORS request
-      credentials: 'omit'  // Don't send credentials for cross-origin requests
+      mode: 'cors',
+      credentials: 'omit' 
     });
     console.log('Fetch completed, response:', response);
     

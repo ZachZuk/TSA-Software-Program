@@ -4,7 +4,7 @@ import re
 
 # Log in to huggingface and grant authorization to huggingchat
 # DO NOT EXPOSE YOUR EMAIL AND PASSWORD IN CODES, USE ENVIRONMENT VARIABLES OR CONFIG FILES
-EMAIL = "ZachZuk"
+EMAIL = "ZachZukosky"
 PASSWD = "Zz-312088!"
 cookie_path_dir = "./cookies/" # NOTE: trailing slash (/) is required to avoid errors
 
@@ -20,3 +20,5 @@ def generate(desc):
     response = formatted_string
     response += '<br><br><strong>Sources:</strong><br>' + '<br>'.join([f'<a href="{source.link}">{source.title}</a>' for source in sources])
     return response
+
+print(generate("my apple plant's leaves are getting black spots"))

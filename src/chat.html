@@ -250,7 +250,7 @@
             formData.append('message', message);
 
             try {
-                const response = await fetch('https://tsa-software-program.onrender.com/generate', {
+                const response = await fetch('http://127.0.0.1:5000/generate', {
                     method: 'POST',
                     body: formData,
                     headers: {
