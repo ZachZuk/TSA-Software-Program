@@ -5,6 +5,7 @@ import os
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
+# debugging stuff
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
@@ -70,7 +71,7 @@ class_indices_mapping = {
 
 # function to make the image a thing for the cnn and not a jpg
 def load_and_preprocess_image(img_path):
-    # load the image
+    # load the image from path
     img = image.load_img(img_path, target_size=(img_height, img_width))
     
     # convert the image to an array
@@ -79,43 +80,28 @@ def load_and_preprocess_image(img_path):
     # reshape the array to include batch dimension
     img_array = np.expand_dims(img_array, axis=0)
     
-    # rescale the image (same scale as during training)
+    # rescale the image to scale from training
     img_array /= 255.0
     
     return img_array
 
-# function to make a prediction based on an image
-def predict_image(model, img_path, class_indices):
-    # load and preprocess the image
-    img_array = load_and_preprocess_image(img_path)
-    
-    # making the prediction
-    predictions = model.predict(img_array)
-    
-    # get the predicted class index
-    predicted_class_index = np.argmax(predictions, axis=1)[0]
-    
-    # stuff for choosing the option basically
-    class_labels = list(class_indices.keys())
-    predicted_class_label = class_labels[predicted_class_index]
-    
-    return predicted_class_label
-
 # function to diagnose a plant start to finish
 def diagnoser(plant_type, img_path):
+    # error handling
     try:
-        # Log the diagnosis attempt
+        # Checking plant type and image
         logger.debug(f"Starting diagnosis for {plant_type}")
         logger.debug(f"Image path: {img_path}")
 
-        # Check if model file exists
+        # Checking if there is a model for the plant type
         model_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'models', f'{plant_type}_model.keras'))
         print(model_path)
+        # Raise error
         if not os.path.exists(model_path):
             logger.error(f"Model file not found: {model_path}")
             raise FileNotFoundError(f"Model file for {plant_type} not found")
 
-        # loading in the right model for the plant
+        # Getting the model once we know it exists
         logger.debug(f"Loading model from {model_path}")
         model = load_model(model_path)
 
@@ -129,26 +115,32 @@ def diagnoser(plant_type, img_path):
             logger.error(f"No class indices found for {plant_type}")
             raise ValueError(f"No class indices found for {plant_type}")
 
-        # predict
+        # using our predict image function
         logger.debug("Starting image prediction")
         prediction = predict_image(model, img_path, class_indices)
         logger.debug(f"Prediction result: {prediction}")
 
         return prediction
 
+    #logging errors
     except Exception as e:
         logger.error(f"Error in diagnosis: {str(e)}")
         raise
 
-# Modify predict_image to add more logging
+# 
 def predict_image(model, img_path, class_indices):
+    # error handling
     try:
+        # logging image path for debugging
         logger.debug(f"Preprocessing image: {img_path}")
-        # load and preprocess the image
+
+        # Using function from earlier to prepare the image
         img_array = load_and_preprocess_image(img_path)
         
+        # more debugging
         logger.debug("Making prediction")
-        # making the prediction
+
+        # actually making the prediction using the model parameter
         predictions = model.predict(img_array)
         
         # get the predicted class index
@@ -158,15 +150,19 @@ def predict_image(model, img_path, class_indices):
         class_labels = list(class_indices.keys())
         predicted_class_label = class_labels[predicted_class_index]
         
+        # Debugging the guess
         logger.debug(f"Predicted class: {predicted_class_label}")
         logger.debug(f"Prediction probabilities: {predictions}")
         
         return predicted_class_label
 
+    # logging errors
     except Exception as e:
         logger.error(f"Error in image prediction: {str(e)}")
         raise
 
+
+# Demonstrating for accuracy, not used in website
 # # list of plant image urls, plant type, and the real diagnosis
 # plants = []
 

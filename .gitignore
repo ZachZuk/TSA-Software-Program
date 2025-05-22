@@ -1,2 +1,7 @@
 .aider*
 .env
+# Configuration files
+*.pyc
+__pycache__/
+src/AI/config.py
+src/AI/cookies/

@@ -29,7 +29,7 @@ def normalize_images_in_directory(root_folder):
             if filename.lower().endswith(('.jpg', '.jpeg', '.png', '.JPG')):  # Check for image file types
                 image_path = os.path.join(dirpath, filename)
                 
-                # bnormalize the image
+                # normalize the image
                 normalized_img = normalize_image(image_path)
                 
                 # Save the normalized image, replacing the original
