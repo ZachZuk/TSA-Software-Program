@@ -258,9 +258,11 @@
     </div>
 </body>
 <script>
+    // getting the input and info elements
     const chatInput = document.getElementById('chat-input');
     const infoText = document.getElementById('info-text');
 
+    // functions for loading for users
     function showSpinner() {
         document.getElementById('loading-spinner').style.display = 'block';
     }
@@ -269,19 +271,26 @@
         document.getElementById('loading-spinner').style.display = 'none';
     }
 
+    // waiting for a key to be pressed
     chatInput.addEventListener('keydown', async (event) => {
+        // if the enter key is pressed without the shift key, start the generating stuff
         if (event.key === 'Enter' && !event.shiftKey) {
             event.preventDefault();
             
+            // getting user message from chat input and trimming
             const message = chatInput.value.trim();
+            // do nothing if message doesn't exist
             if (!message) return;
 
+            // making sure users know the program is working
             infoText.textContent = 'Thinking...';
             showSpinner();
             
+            // creating form data with the message
             const formData = new FormData();
             formData.append('message', message);
 
+            // calling the generate route with form data and with error handling
             try {
                 const response = await fetch('http://127.0.0.1:5000/generate', {
                     method: 'POST',
@@ -291,17 +300,21 @@
                     }
                 });
 
+                // throwing error if response is bad
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
 
+                // getting info from response and making it the infoText
                 const data = await response.json();
                 infoText.innerHTML = data.info;
             } catch (error) {
+                // logging any errors
                 console.error('Error:', error);
                 infoText.textContent = 'An error occurred while getting the response.';
             }
 
+            // clearing the chat input and hiding the spinner
             chatInput.value = '';
             hideSpinner();
         }

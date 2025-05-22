@@ -4,4 +4,4 @@
 *.pyc
 __pycache__/
 src/AI/config.py
-src/AI/cookies/
+cookies/

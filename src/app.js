@@ -42,12 +42,7 @@ const plantConversions = {
     'Tomato': 'Tomato'
 }
 
-<<<<<<< Updated upstream
-// Checks lots of edge cases to ensure the user is selecting the correct values
-
-=======
 // diagnose button element
->>>>>>> Stashed changes
 const diagnoseButton = document.getElementById('diagnose-button');
 // checking it for debugging
 console.log(diagnoseButton)
