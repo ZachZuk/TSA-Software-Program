@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Sets title and icon -->
     <meta charset="UTF-8">
     <title>Help</title>
     <link rel="icon" href="/favicon.ico">
+
+    <!-- Styles all the elements on the page-->
     <style>
+        /* Reset body and html margin/padding with default font */
          body, html {
             height: 100%;
             margin: 0;
@@ -12,6 +16,7 @@
             font-family: "Helvetica", sans-serif;
         }
 
+        /* Center everything in body and make background image fullscreen */
         body {
             display: flex;
             justify-content: center;
@@ -20,6 +25,8 @@
             background-size: cover;
             background-position: center;
         }
+
+        /* Centers glass container on the page */
         .glass-container {
             position: absolute;
             left: 50%;
@@ -42,6 +49,8 @@
             align-items: center;
             flex-direction: column;
         }
+
+        /* Styles the example pictures so they fit in the glass container */
         .image-gallery {
             display: flex;
             flex-wrap: wrap;
@@ -49,11 +58,15 @@
             justify-content: center;
             margin: 20px 0;
         }
+
+        /* Styles the images specifically and adds shadows*/
         .image-gallery img {
             max-width: 100px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+
+        /* Styles the div so it's at the bottom of the container*/
         .section {
             background: rgba(222, 231, 235, 0.5);
             padding: 20px;
@@ -63,6 +76,8 @@
             border-radius: 15px;
             color: rgb(56, 68, 67)
         }
+
+        /* Nav bar styling*/
         .nav {
             position: absolute;
             justify-content: space-between;
@@ -81,6 +96,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
 
+         /* Styling links inside nav bar */
         .nav a {
             font-size: 0.9em;
             background: rgba(0, 0, 0, 0.3);
@@ -91,12 +107,14 @@
             color: white;
         }
 
+        /* Hover effect for nav buttons */
         .nav a:hover {
             background: rgba(0, 0, 0, 0.45);
         }
     </style>
 </head>
 <body>
+    <!-- Makes Glass Container and adds information within it -->
     <div class="glass-container">
         <h1>How to Use</h1>
         <div class="section">
@@ -120,6 +138,7 @@
             <p>The diseases that we are able to detect can be found <a href="{{ url_for('diseases') }}">here</a></p>
         </div>
     </div>
+    <!-- Adds nav bar to the page -->
     <div class="nav">
         <a class="home" href="{{ url_for('home') }}">Home</a>
         <a class="diagnose" href="{{ url_for('diagnose') }}">Diagnose</a>

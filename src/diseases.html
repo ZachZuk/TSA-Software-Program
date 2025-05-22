@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Sets title and icon -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/favicon.ico">
     <title>Diseases</title>
+    <!-- Styles all the elements on the page-->
     <style>
         .text {
             font-family: Helvetica, sans-serif;
         }
+
+        /* Nav bar styling*/
         .nav {
             position: absolute;
             justify-content: space-between;
@@ -27,6 +31,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
 
+        /* Styling links inside nav bar */
         .nav a {
             font-size: 0.9em;
             background: rgba(0, 0, 0, 0.3);
@@ -37,12 +42,14 @@
             color: white;
         }
 
+        /* Hover effect for nav buttons */
         .nav a:hover {
             background: rgba(0, 0, 0, 0.45);
         }
     </style>
 </head>
 <body>
+    <!-- Explains all the different diseases that our project covers -->
     <p class="text">
         Apple:
             <br>
@@ -128,6 +135,8 @@
             <br>
             &nbsp;&nbsp;Healthy
     </p>
+
+    <!-- Sets Nav Bar for this page-->
     <div class="nav">
         <a class="home" href="{{ url_for('home') }}">Home</a>
         <a class="diagnose" href="{{ url_for('diagnose') }}">Diagnose</a>

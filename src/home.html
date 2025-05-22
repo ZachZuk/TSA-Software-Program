@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head class="head">
+    <!-- Set character encoding and viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/favicon.ico">
+    
+    <!-- Sets Page Title --> 
     <title>Plant Diagnosis</title>
+
+    <!-- Sets Styling for all of the elements -->
     <style>
+        /* Button styling */
         .button {
             font-family: sans-serif;
             background-color: #00aaff;
@@ -14,11 +19,15 @@
             border: none;
             cursor: pointer;
         }
+
+        /* Styles Dropdown Menu */
         .dropdown {
             padding: 1%;
             font-family: sans-serif;
             margin-bottom: 10px;
         }
+
+        /* Reset body and html margin/padding with default font */
         body, html {
             height: 100%;
             margin: 0;
@@ -26,15 +35,17 @@
             font-family: "Helvetica", sans-serif;
         }
 
+        /* Center everything in body and make background image fullscreen */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('https://stacyknows.com/wp-content/uploads/2022/07/pexels-jahoo-clouseau-388415-scaled.jpg');
+            background-image: url("fieldd.jpeg");
             background-size: cover;
             background-position: center;
         }
 
+        /* Centers glass container on the page */
         .glass-container {
             position: absolute;
             left: 50%;
@@ -45,18 +56,18 @@
             height: 70%;
             max-height: 70%;
             padding: 2%;
-            background: rgba(220, 220, 220, 0.2);
+            background: rgba(220, 220, 220, 0.2); /* transparent glass effect */
             border-radius: 10px;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px); /* blurs glass container */
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
             color: white;
             text-align: center;
             display: flex;
-
             align-items: center;
             flex-direction: column;
         }
         
+        /* Nav bar styling*/
         .nav {
             position: absolute;
             justify-content: space-between;
@@ -75,6 +86,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
 
+        /* Styling links inside nav bar */
         .nav a {
             font-size: 0.9em;
             background: rgba(0, 0, 0, 0.3);
@@ -85,10 +97,12 @@
             color: white;
         }
 
+        /* Hover effect for nav buttons */
         .nav a:hover {
             background: rgba(0, 0, 0, 0.45);
         }
 
+        /* Title element styling */
         .title {
             margin-top: 0em;
             font-family: 'Helvetica', sans-serif;
@@ -96,6 +110,7 @@
             font-size: 2em;
         }
         
+        /* Styling about text information */
         .about-web {
             text-align: center;
             width: 85%;
@@ -104,6 +119,7 @@
             margin-top: 5%;
         }
         
+        /* Styling for the Try It Out Button (Redirects Users to Diagnose) */
         .button2 {
             position: absolute;
             bottom: 0;
@@ -126,28 +142,36 @@
             transition: box-shadow 0.17s;
         }
 
+        /* Hover animation for button2 */
         .button2:hover {
             box-shadow: 0 0 10px 3px rgb(93, 104, 109), 0 0 10px 100px rgba(149, 195, 228, 0.2) inset;
             transition: box-shadow 0.17s;
         }
     </style>
-    <script src="/app.js"></script>
+
+    <!-- App.js functionality -->
+    <script src="app.js"></script>
 </head>
 <body>
+    <!-- Main content container glass effect -->
     <div class="glass-container">
         <h1 class="title">Plant Diagnosis</h1>
+
+        <!-- Short explanation of the project -->
         <p class="about-web">
-            This is our TSA Project that aims to help agriculture become more sustainable and efficent. Our program will do this by
-            giving farmers the ability to take a picture of a crop that looks like it has some disease and our AI will be able to disinguish
-            what the problem is with the crop and give the farmer a way to heal the crop. 
+            This is our TSA Project that aims to help agriculture become more sustainable and efficent. Our program does this by
+            giving farmers the ability to take a picture of a crop that looks like it has a disease allowing our AI to disinguish
+            what the problem is with the crop and give the farmer a step by step solution to heal the crop. 
         </p>
-        <button class="button2" onclick="diagnose()">Try it Out</button>
+
+        <!-- Button that triggers diagnosis feature -->
+        <button class="button2" onclick="diagnose(null)">Try it Out</button>
     </div>
+
+    <!-- Builds navigation bar with links -->
     <div class="nav">
-        <a class="diagnose" href="{{ url_for('diagnose') }}">Diagnose</a>
-        <a class="about" href="{{ url_for('about') }}">About</a>
-        <a class="help" href="{{ url_for('help') }}">Help</a>
-        <a href="{{ url_for('chat') }}">Chat</a>
+        <a class="about" href="about.html">About</a>
+        <a class="diagnose" href="diagnose.html">Diagnose</a>
     </div>
 </body>
 </html>

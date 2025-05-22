@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Sets title and icon -->
     <title>Diagnose</title>
     <link rel="icon" href="/favicon.ico">
     <style>
+        /* Imports Google Fonts */
         @import url("https://fonts.googleapis.com/css?family=Rajdhani:300&display=swap");
         
+        /* Reset body and html margin/padding with default font */
         body, html {
             height: 100%;
             margin: 0;
@@ -13,6 +16,7 @@
             font-family: "Helvetica", sans-serif;
         }
 
+        /* Center everything in body and make background image fullscreen */
         body {
             display: flex;
             justify-content: center;
@@ -22,6 +26,7 @@
             background-position: center;
         }
 
+        /* Centers glass container on the page */
         .glass-container {
             position: absolute;
             width: 80%;
@@ -37,6 +42,7 @@
             text-align: center;
         }
 
+        /* Title element styling */
         .title {
             /* font-family: 'Times New Roman', Times, serif; */
             padding-top: 3%;
@@ -55,6 +61,7 @@
             background-color: rgba(105, 125, 155, 0.3);
         }
 
+        /* Styles Dropdown Menu */
         .dropdown {
             padding: 0.5em;
             padding-top: 0.2em;
@@ -72,6 +79,7 @@
             transition: box-shadow 0.17s;
         }
 
+        /* Creates the dropdown hover effect */
         .dropdown:hover {
             box-shadow: 0 0 5px 2px rgba(173, 216, 230, 0.744), 0 0 30px 20px rgba(99, 131, 154, 0.4) inset;
             transition: box-shadow 0.17s;
@@ -82,6 +90,7 @@
             font-family:'Times New Roman', Times, serif;
         }
         
+        /* Centers the image selection box in the glass container */
         .box {
             width: 25em;
             margin: auto;
@@ -95,11 +104,13 @@
             box-sizing: border-box;
         }
 
+        /* Styles the text to be centered in the image selection box */
         .caption {
             color:rgba(0, 0, 0, 0.4);
             font-size: 1.2em;
         }
 
+        /* Nav bar styling*/
         .nav {
             position: absolute;
             justify-content: space-between;
@@ -118,6 +129,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
 
+        /* Styling links inside nav bar */
         .nav a {
             font-size: 0.9em;
             background: rgba(0, 0, 0, 0.3);
@@ -128,10 +140,12 @@
             color: white;
         }
 
+        /* Hover effect for nav buttons */
         .nav a:hover {
             background: rgba(0, 0, 0, 0.45);
         }
 
+        /* Button styling */
         .button {
             height: 2.1em;
             width: 7em;
@@ -149,11 +163,13 @@
             transition: box-shadow 0.17s;
         }
 
+        /* Creates the button hover effect */
         .button:hover {
             box-shadow: 0 0 10px 3px rgb(29, 79, 109), 0 0 10px 40px rgba(149, 195, 228, 0.2) inset;
             transition: box-shadow 0.17s;
         }
 
+        /* Styleing for the loading spinner */
         .spinner {
             width: 40px;
             height: 40px;
@@ -161,6 +177,7 @@
             margin: 100px auto;
         }
 
+        /* Styles the bouncing circles in the loading spinner*/
         .double-bounce1, .double-bounce2 {
             width: 100%;
             height: 100%;
@@ -173,10 +190,12 @@
             animation: bounce 2.0s infinite ease-in-out;
         }
 
+        /* Creates an alternating effect for the bouncing balls*/
         .double-bounce2 {
             animation-delay: -1.0s;
         }
 
+        /* Defines the keyframes for the balls */
         @keyframes bounce {
             0%, 100% {
                 transform: scale(0.0);
@@ -188,6 +207,7 @@
     </style>
 </head>
 <body>
+    <!-- Sets all the options for the dropdown menu -->
     <div class="glass-container">
         <h1 class="title">Diagnose</h1>
         <select class="dropdown" id="plant-dropdown">
@@ -202,12 +222,14 @@
             <option class="inside">Strawberry</option>
             <option class="inside">Tomato</option>
         </select>
+        <!-- Creates the image selection area -->
         <input type="file" id="file-input" accept="image/*" style="display: none;" />
         <label for="file-input">
             <div class="box">
                 <p class="caption">Drag and drop or select image</p>
             </div>
         </label>
+        <!-- Creates the diagnose button -->
         <button class="button" id="diagnose-button">Diagnose</button>
     </div>
     <div class="nav">
@@ -216,6 +238,7 @@
         <a class="help" href="/help">Help</a>
         <a href="/chat">Chat</a>
     </div>
+    <!-- Creates the loading spinner-->
     <div id="loading-spinner" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1000;">
         <div class="spinner">
             <div class="double-bounce1"></div>
@@ -223,5 +246,6 @@
         </div>
     </div>
 </body>
+<!-- App.js implementation -->
 <script src="app.js"></script>
 </html>

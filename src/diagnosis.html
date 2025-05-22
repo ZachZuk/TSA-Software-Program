@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <!-- Sets title and icon -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/favicon.ico">
     <title>Diagnosis Results</title>
     <style>
+        /* Imports Google Fonts */
         @import url("https://fonts.googleapis.com/css?family=Rajdhani:300&display=swap");
         
+        /* Reset body and html margin/padding with default font */
         body, html {
             height: 100%;
             margin: 0;
@@ -15,6 +18,7 @@
             font-family: "Helvetica", sans-serif;
         }
 
+        /* Center everything in body and make background image fullscreen */
         body {
             display: flex;
             justify-content: center;
@@ -23,7 +27,8 @@
             background-size: cover;
             background-position: center;
         }
-
+        
+        /* Centers glass container on the page */
         .glass-container {
             position: absolute;
             width: 80%;
@@ -38,7 +43,8 @@
             color: white;
             text-align: center;
         }
-        
+
+        /* Makes headers bolded and centered with shadows*/
         .header {
             text-align: center;
             font-size: x-large;
@@ -47,6 +53,7 @@
             text-shadow: 2px 2px 8px rgba(56, 68, 67, 0.6);
         }
 
+        /* Changes font size and weight to sub-headers with shadows*/    
         .sub-header {
             font-size: x-large;
             font-weight: 400;
@@ -63,6 +70,7 @@
             margin-bottom: 4em;
         }
 
+        /* Styles buttons on the page */ 
         .button {
             height: 2.1em;
             width: 11em;
@@ -80,11 +88,13 @@
             transition: box-shadow 0.17s;
         }
 
+        /* Hover animation for button */
         .button:hover {
             box-shadow: 0 0 10px 3px rgb(29, 79, 109), 0 0 10px 40px rgba(149, 195, 228, 0.2) inset;
             transition: box-shadow 0.17s;
         }
 
+        /* Styles pictures so they fit in the glass container */
         .image-gallery {
             display: flex;
             flex-wrap: wrap;
@@ -92,11 +102,15 @@
             justify-content: center;
             margin: 20px 0;
         }
+
+        /* Styles the images specifically and adds shadows*/
         .image-gallery img {
             max-width: 150px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+
+        /* Styles the button so it stands out to the user*/
         .buttons-container {
             text-align: center;
             margin-top: 40px;
@@ -107,6 +121,8 @@
             left: 50%;
             transform: translateX(-50%);
         }
+
+        /* Nav bar styling*/
         .nav {
             position: absolute;
             justify-content: space-between;
@@ -125,6 +141,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
 
+        /* Styling links inside nav bar */
         .nav a {
             font-size: 0.9em;
             background: rgba(0, 0, 0, 0.3);
@@ -135,12 +152,14 @@
             color: white;
         }
 
+        /* Hover effect for nav buttons */
         .nav a:hover {
             background: rgba(0, 0, 0, 0.45);
         }
     </style>
 </head>
 <body>
+    <!-- Main content container glass effect -->
     <div class="glass-container">
         <div class="header">
             <h1 id="mainHeader">Diagnosing disease . . .</h1>
@@ -154,6 +173,7 @@
             </div>
         </div>
 
+        <!-- Creates treatement section-->
         <div class="section">
             <h2 class="sub-header" id="treatmentHeader">Treatment</h2>
             <p id="treatment" class="details"></p>
